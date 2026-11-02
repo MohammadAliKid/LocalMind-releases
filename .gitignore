@@ -1,0 +1,5 @@
+*.exe
+*.nupkg
+RELEASES
+latest.json*
+SHA256SUMS.txt
