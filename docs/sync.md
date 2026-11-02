@@ -62,6 +62,10 @@ note differs from what LocalMind expects, LocalMind asks before changing it (*Ch
 after restoring a backup. Review history is never reset. You can also choose to send cards to Anki from one PC
 only.
 
+Tip: let Anki finish syncing with AnkiWeb before you send new cards from your second PC. If both PCs add the
+same new card to two separate Anki collections before AnkiWeb merges them, AnkiWeb ends up with two copies.
+LocalMind then reports a conflict and changes neither copy, so you can delete the extra one in Anki.
+
 ## Privacy
 
 - Syncthing encrypts the connection between your PCs (TLS) and doesn't route your files through a company's
