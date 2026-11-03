@@ -47,3 +47,15 @@ MCowBQYDK2VwAyEAKc/j/kvBkKz2qInN2bTiAGTi3kWahXZbEKsrRTLJIOw=
 | `RELEASES` | Squirrel.Windows index of the update package |
 | `latest.json`, `latest.json.sig` | Signed update manifest checked by the app |
 | `SHA256SUMS.txt` | SHA-256 of every file above |
+
+## Android release identity
+
+The GitHub APK is signed with LocalMind's permanent Android release certificate.
+SHA-256: `91c92f7cd107dfc977661f0497b2954bfcb5d789f52dcb7f12e022bfcb61bd75`.
+
+Use the official Android SDK tool `apksigner verify --print-certs LocalMind-Android-0.5.1.apk` to inspect it. Compare the
+APK's SHA-256 with SHA256SUMS.txt on the release page. In-app updates also verify the Ed25519 metadata signature,
+APK hash, package ID, both versions and the trusted Android certificate before opening Android's system installer.
+Installation needs your approval. Never install a debug APK over a release installation.
+
+Mac downloads are not Developer ID signed or notarized. Verify hashes and follow [Apple's installation guidance](https://support.apple.com/102445). A signed update manifest authenticates the download independently of Apple's code signing.

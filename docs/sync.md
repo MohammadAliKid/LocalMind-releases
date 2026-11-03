@@ -90,3 +90,15 @@ LocalMind then reports a conflict and changes neither copy, so you can delete th
 
 Pause sync (*Settings → Sync → Pause*) when you don't want changes sent or received for a while. Changes made
 meanwhile are sent when you resume.
+
+## Mac and Android
+
+Each device keeps its own SQLite library. Share only the chosen LocalMind sync folder through Syncthing or a
+maintained compatible client; never synchronize an active SQLite database. On Android, create a shared folder such
+as Documents/LocalMind-sync, choose it in LocalMind Settings → Sync, and grant the system folder permission. Share
+the same folder with the PC/Mac sync folder. Credentials are entered separately on each device and never synced.
+
+Same-certificate Android updates preserve persisted folder permission and sync identity. After migrating from a
+debug installation by uninstalling, choose the folder again. Before uninstalling, export a backup and preserve
+images separately: uninstall deletes app data. On Mac, replacing the application in Applications preserves the
+library under Library/Application Support/LocalMind. Concurrent edits are kept for your choice, not silently overwritten.

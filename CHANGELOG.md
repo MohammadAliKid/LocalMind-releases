@@ -1,29 +1,176 @@
-# LocalMind release notes
+# Changelog
 
-## 0.3.0
+## 0.5.1 (2026-11-03)
 
-- **Sync between your PCs.** Keep LocalMind the same on a desktop and a laptop through a folder that
-  Syncthing shares between them. Each PC keeps its own library and applies the other's changes.
-  - Notes edited on both PCs at once are kept side by side with clear choices: keep either version, keep
-    both, or merge.
-  - A note deleted on one PC while being edited on the other is never lost.
+- Android: native GitHub update checks and Settings → Updates, release notes, streamed download progress,
+  cancellation, retry and Android system-installer handoff. Ed25519 metadata, SHA-256, APK cryptographic signatures,
+  package ID, versionCode/versionName and the established release certificate are checked before installation.
+  Android WorkManager schedules metadata checks when connected and battery is not low; installation remains explicit.
+- Permanent RSA-4096 Android release identity; DPAPI-encrypted local credentials; encrypted offline backup with a
+  restored-keystore certificate check. Release builds fail when signing credentials or the certificate pin are missing.
+- macOS downloads reuse the previously verified **0.5.0** Apple Silicon and Intel packages with normal DMG filenames
+  and signed manifests for manual verified-DMG updates. They are not Developer ID signed or notarized; Gatekeeper
+  approval may be needed. New ad-hoc signing, DMG/Keychain CI checks and a longer DMG timeout are prepared in source,
+  but no new Mac package is published while hosted macOS CI is billing-blocked.
+- Official one-job GitHub self-hosted runners inside Windows Sandbox; private trusted-ref dispatch, isolated
+  Windows/Android checks, local CI fallback and reports. Signing keys and personal data remain outside routine CI.
+- Release and Claude continuation instructions, reproducible version updates and permanent Android certificate rule.
+
+Publication and per-platform verification status are recorded in `docs/release-status.json` and the handoff.
+
+## 0.5.0 (2026-11-03)
+
+### Platforms
+- Windows: the supported, signed-update release (as before).
+- macOS (Apple Silicon and Intel): a **test build** (unsigned, not notarized). It runs your notes, search, cards,
+  AnkiConnect sync, AI providers and PC sync like Windows, keeps keys in the macOS Keychain, and checks for signed
+  updates (it downloads and verifies the installer; you install it). Not a production release until it is signed
+  with an Apple Developer ID.
+- Android (phones and tablets): a **test build** (debug-signed, not on Google Play). Works offline on the phone with
+  its own library; see Android below.
+
+### Android
+- Notes, search, collections, tags, version history and Basic/Cloze cards on the phone, offline, with autosave.
+  Phone layout with bottom navigation; tablets show the list and the note side by side.
+- Sync with your PCs: choose a shared folder with Android's folder picker (for example Documents/LocalMind-sync) and
+  share it with your PCs using a maintained Syncthing-compatible app such as Syncthing-Fork (the original Syncthing
+  app for Android is discontinued). Only small change files are synced, never the database.
+- AnkiDroid: send approved Basic and Cloze cards to the "#LocalMind" deck in AnkiDroid; cards are updated in place
+  later, never duplicated, and review history is kept. Image Occlusion cards are not sent to AnkiDroid yet (sync
+  them to Anki from a PC).
+- AI (optional): Google Gemini, OpenRouter or Anthropic with your own key, kept in the Android Keystore (never
+  synced, never in backups). Free-only mode and consent work as on desktop. Sign in with ChatGPT, the OpenAI API key
+  and LM Studio are desktop-only for now.
+- Images (from the Photo Picker), a touch-friendly editor toolbar with Cloze, and the keyboard never covers the text.
+- Backups: save a backup file wherever you choose and restore one (a copy of the current notes is kept first). Same
+  format as desktop. Images are not in Android backups yet.
+
+### Fixed
+- Quitting with unsaved text and choosing "Keep editing" now really keeps LocalMind running: the window stays open
+  and saving, sync and search keep working. (0.4.0 closed the local server first and then quit anyway.) Logging off
+  or shutting down never waits on that question; the typed text is kept as a draft. Installing an update closes the
+  windows first, and keeping your edits postpones the restart.
+- Moving the sync folder on a PC to a new, empty folder: other devices joining from the new folder now receive the
+  whole library (before, they could wait forever for earlier changes).
+
+## 0.4.0 (2026-11-03)
+
+### Added
+- Resizable workspace: drag the dividers between the sidebar, note list, editor and note tools (keyboard:
+  focus a divider and use the arrow keys; double-click resets it). Each panel can be hidden and shown
+  (Ctrl+Shift+1/2/3), and the layout is remembered on each PC. On small windows the side panels fold away first.
+- Focus Mode (Ctrl+Shift+F, Esc to leave): just the note, wider. Leaving it restores your previous layout.
+- Split View (Ctrl+\): two notes side by side, or a note beside its flashcards, each with its own autosave
+  and scrolling.
+
+- Version history (History button in the editor): LocalMind keeps the text each editing session started from,
+  plus the text right before a restore, a change from another PC or a conflict choice. You can preview a
+  version, compare it with the current text, and restore it; restoring is a new edit, so newer history is kept.
+  Versions record the PC they came from, sync between your PCs and are included in backups (backup format v5).
+- A new note editor. Notes are still plain Markdown, now formatted as you type: headings, bold, italic,
+  underline, highlight (`==text==`), bulleted, numbered and check lists with clickable checkboxes, tables,
+  collapsible sections, and images (paste, drop or pick a file; stored on your PC, synced and backed up).
+  A toolbar and shortcuts (Ctrl+B/I/U, Ctrl+Shift+H, Ctrl+Alt+1/2/3), an Outline of the note's headings, and
+  collapsible heading sections. Undo/redo is per note.
+- Cloze deletions while you write: select text and press Ctrl+Shift+C to make it `{{c1::…}}` (c2, c3… count up
+  within the paragraph; Ctrl+Shift+Alt+C reuses the last number). The Cloze preview shows every review card the
+  paragraph makes and lets you add hints. This only changes your note; creating the card is a separate step.
+- Cards from selected text: a small toolbar above a selection and the right-click menu offer Basic card, Cloze
+  card, cards with AI (about just that text) or a card written manually (Alt+Shift+B/C/G/M). Each card opens
+  for editing first and is saved as a draft for your approval; nothing is sent to Anki until you sync.
+- Your own Cloze note type, such as AnKing Overhaul (Settings → Anki → Preferred Cloze note type). LocalMind
+  detects installed note types, maps your text and Extra to the right fields and leaves the rest for you. Cards
+  then look and behave like your other AnKing cards. LocalMind never changes that note type (no new fields,
+  templates, styling or scripts) and never edits notes it didn't create; its notes carry a `LocalMind::id::…`
+  tag so they're found again. A preview renders cards with the note type's own template from your Anki.
+  You can choose another deck too.
+- Already-synced LocalMind Cloze cards stay as they are. Optionally you can move them: LocalMind shows which
+  cards qualify, saves a backup, adds the id tags after you confirm, and you finish with Anki's own Change Note
+  Type, which keeps review history.
+- Card quality suggestions: each card shows advice when its question is vague, the answer is long, context is
+  missing, it tests several facts, it duplicates another card, its cloze markup is broken, or its answer uses
+  words that aren't in the note. These checks run locally. "Review with AI" asks your AI provider for a
+  second opinion, only when you click it.
+- Card status per note in the note list: card drafts, awaiting approval, ready to sync, in Anki, changed since
+  sync, or a sync conflict. Sync results in Settings link back to each card's note.
+- Flashcard generation preferences (Settings → Flashcard generation): card types (Basic/Cloze/both and the
+  Cloze share), how many, difficulty, answer length, question style, context and explanations in Extra, and
+  avoiding facts that already have cards. Each note can override them in its Flashcards window; the overrides
+  sync with the note.
+- Image Occlusion cards (Flashcards → Add Image Occlusion): pick, upload or paste an image, draw rectangle and
+  ellipse masks, choose Hide All, Guess One or Hide One, Guess One, and preview each review card. They sync as
+  notes of Anki's built-in Image Occlusion note type (Anki 23.10 or newer), with the image copied into Anki's
+  media. See docs/IMAGE-OCCLUSION.md for what is and isn't supported.
+- More AI providers (Settings → AI), next to your ChatGPT plan and OpenAI API key: Google Gemini API, OpenRouter,
+  Anthropic Claude API, and LM Studio running on your PC. Each shows how it's paid for, its privacy terms, model
+  list with price status, a connection test, and usage where the provider offers it. Keys are stored encrypted
+  on this PC only (never synced, backed up or shown again). Before notes go to Gemini, OpenRouter or Claude for
+  the first time you review the provider's privacy notice and agree. Notes are never organized automatically
+  with an unpaid provider. Changing provider never sends or reprocesses notes.
+- Strict Free-only mode: only requests verified as free are sent (OpenRouter models whose current price is 0,
+  with a guard that stops OpenRouter from routing to a paid endpoint; LM Studio; ChatGPT plan usage). Anything
+  that can't be verified, such as Gemini (Google's API doesn't show whether billing is on), is refused.
+  LocalMind never falls back to a paid model.
+- Better search: matched words are highlighted in titles and excerpts; notes filed under a matching collection
+  or tag appear too (with "Matches collection: …"); results are ranked by relevance with a boost when all words
+  are in the title; accents are ignored. Enter in the search box opens the top result, ↓ moves into the list.
+
+### Fixed
+- Long note titles were cut off in the editor. Titles now wrap fully, including very long words, at any window
+  size and zoom level. Lists, search results, favorites, related notes and dialogs show up to two lines and the
+  full title on hover.
+
+## 0.3.0 (2026-11-02)
+
+### Added
+- Sync between your PCs (Settings → Sync between your PCs). Each PC keeps its own library; changes travel as
+  small files through a folder that Syncthing shares between your PCs.
+  - Conflicting edits are kept and shown with clear choices: keep this PC's version, keep the other's, keep
+    both, or merge manually. A note deleted on one PC while edited on the other is never lost.
   - Sign-ins, API keys and Anki connection data never sync.
-  - Setup guide: [docs/sync.md](docs/sync.md).
-- Sync status in the sidebar and in *Settings → Sync between your PCs*.
-- Flashcards keep their permanent IDs across PCs, so a second PC finds cards already in Anki instead of adding
-  duplicates.
+  - A sync status indicator sits in the sidebar. Setup guide: docs/SYNC-SETUP.md.
+- Public binary releases in MohammadAliKid/LocalMind-releases (installer, signed update feed, checksums);
+  automatic updates now find new versions there.
+- New README, user guide, issue templates, contributing and security policy.
+- An encrypted offline backup tool for the update signing key, and a one-command release script that audits
+  and verifies a release before publishing it (maintainers).
 
-## 0.2.0
+### Changed
+- Database schema v7 (sync bookkeeping; reversible). Existing data is unchanged.
 
-- Light, Dark and *Follow Windows* themes.
-- Folders for collections; collapsible, searchable tags; tag filters in search; Favorites and Recently opened.
-- Quick Capture: Ctrl+Shift+N anywhere in Windows (configurable).
-- Command palette: Ctrl+K.
-- Inbox count, bulk actions and keyboard navigation.
-- Automatic local backups with retention and one-click restore.
-- Automatic updates verified with LocalMind's Ed25519 release signature.
+## 0.2.0 (2026-11-02)
 
-## 0.1.0
+### Added
+- Light, Dark and Follow Windows themes (Settings → Appearance).
+- Folders for collections: create, rename, remove (collections and notes stay) and collapse. Move a collection
+  with its ⋯ menu; collections can also be renamed in place.
+- The Tags section is collapsible (collapsed by default) and searchable. Long collection lists get a filter.
+- Search shows tag filters for the matching notes.
+- Favorites (star a note) and Recently opened views.
+- Redesigned sidebar: Settings is always visible at the bottom, and the middle scrolls on its own.
+- Quick Capture: a global shortcut (default Ctrl+Shift+N, configurable in Settings) opens a small window that
+  saves to the Inbox, even when LocalMind is minimized. If another program already uses the shortcut, Settings
+  says so; LocalMind doesn't take it over. Alt+Shift+N inside the app.
+- Command palette (Ctrl+K): search notes, jump to views, collections and tags, run actions.
+- Inbox count in the sidebar.
+- Bulk actions: select notes (Ctrl/Shift+click, Space, Ctrl+A) to tag, file, move, star, organize with AI or
+  delete them together.
+- Keyboard navigation in the note list (↑/↓, j/k, Enter to edit, Esc to clear the selection).
+- Automatic local backups (Settings → Backup and restore): every hour, day (default) or week, skipped when
+  nothing changed. The newest 7 are kept, plus one a day for 2 weeks and one a week for 2 months. Settings
+  shows the location and the last result, and has Back up now and Restore. Backups never include your API key
+  or ChatGPT sign-in, and are never uploaded.
+- Automatic updates (installed app): Settings → Updates checks for new versions and shows the release notes.
+  Download update and Restart to update need a click. Updates are verified against LocalMind's signature and
+  file hashes before installing, older versions are never installed, and a backup is taken before restarting.
+  (Publishing releases is set up separately; see docs/RELEASING.md.)
+- GitHub Actions CI: typecheck, tests and a Windows installer build.
+- Browser regression suite in the repository (`npm run e2e`).
 
-- First release: local Markdown notes, AI organization (ChatGPT plan or API key), related notes, Basic and
-  Cloze flashcards synced to the `#LocalMind` Anki deck, backup and restore, Windows installer.
+### Changed
+- Database schema v6 (reversible). An existing database is snapshotted before it is upgraded.
+- Backup format v4 (adds folders and favorites). Older backups still restore.
+
+## 0.1.0 (2026-11-02)
+- First release: local notes, AI organization (API key or ChatGPT plan), related notes, Basic and Cloze
+  flashcards with #LocalMind Anki sync, backup and restore, Windows installer.
