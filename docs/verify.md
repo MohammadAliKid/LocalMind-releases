@@ -53,7 +53,7 @@ MCowBQYDK2VwAyEAKc/j/kvBkKz2qInN2bTiAGTi3kWahXZbEKsrRTLJIOw=
 The GitHub APK is signed with LocalMind's permanent Android release certificate.
 SHA-256: `91c92f7cd107dfc977661f0497b2954bfcb5d789f52dcb7f12e022bfcb61bd75`.
 
-Use the official Android SDK tool `apksigner verify --print-certs LocalMind-Android-0.5.1.apk` to inspect it. Compare the
+Use the official Android SDK tool `apksigner verify --print-certs LocalMind-Android-0.5.2.apk` to inspect it. Compare the
 APK's SHA-256 with SHA256SUMS.txt on the release page. In-app updates also verify the Ed25519 metadata signature,
 APK hash, package ID, both versions and the trusted Android certificate before opening Android's system installer.
 Installation needs your approval. Never install a debug APK over a release installation.

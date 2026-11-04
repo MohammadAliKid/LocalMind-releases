@@ -98,7 +98,14 @@ maintained compatible client; never synchronize an active SQLite database. On An
 as Documents/LocalMind-sync, choose it in LocalMind Settings → Sync, and grant the system folder permission. Share
 the same folder with the PC/Mac sync folder. Credentials are entered separately on each device and never synced.
 
+Android 0.5.2 transfers referenced images separately from the small journal files, verifies their content hashes
+and reuses existing files. Foreground sync runs on opening/resuming the app and periodically while it remains open.
+The status sheet distinguishes local save, pending, paused, error and conflict states. “Folder updated” confirms
+the chosen folder was written; it does not confirm another device received the changes. After a storage failure,
+restore folder access and retry: original operation IDs are reused. Pause stops at file boundaries.
+
 Same-certificate Android updates preserve persisted folder permission and sync identity. After migrating from a
-debug installation by uninstalling, choose the folder again. Before uninstalling, export a backup and preserve
-images separately: uninstall deletes app data. On Mac, replacing the application in Applications preserves the
-library under Library/Application Support/LocalMind. Concurrent edits are kept for your choice, not silently overwritten.
+debug installation by uninstalling, choose the folder again. Before uninstalling, export a backup: uninstall deletes
+app data. Android 0.5.2 backups include referenced images; older phone backups may require preserving those files
+separately. On Mac, replacing the application in Applications preserves the library under
+Library/Application Support/LocalMind. Concurrent edits are kept for your choice, not silently overwritten.

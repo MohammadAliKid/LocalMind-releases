@@ -1,5 +1,26 @@
 # Changelog
 
+## 0.5.2 (2026-11-04)
+
+- Android redesign: system typography, light/dark accents, Library/Search/Settings navigation, Recent/Favorites/
+  Inbox, editable templates, text sharing, a minimal editor, Focus Mode and a top-right provider-aware tools drawer.
+- Fix duplicate IME insets so Gboard leaves the editor and caret visible. Preserve the editor through layout,
+  theme and system text-size changes; keep native selection, composition, undo and redo. Add touch link/cloze forms.
+- Offline Study Mode with cloze reveal, linked card previews and related notes; it does not schedule reviews or
+  write to AnkiDroid merely by displaying cards. Approved Basic/Cloze sync retains permanent NoteUID mappings.
+- Gallery/camera/native image paste, explicit Paste image, photo compression and full-screen preview. Schema-5
+  Android backups include deduplicated, hash-verified attachments; restore repairs corrupt files and handles old
+  or incomplete backups explicitly. Native backup picker state no longer duplicates large payloads in Binder.
+- Native shared-folder image transfer and durable journal retries: persist original operation IDs before writing
+  the chosen folder; recover unchanged segments after storage failure/restart. Distinguish local save, pending,
+  paused, error/conflict and completed folder writes; never imply remote receipt from a local folder write.
+- Curated Gemini text-model selection with account catalog filtering, limits and unverified billing clearly shown.
+  Official Android ChatGPT-plan distribution eligibility remains unestablished; no unofficial sign-in workaround.
+- Reject stale search responses and bound list rendering. Native tests cover long notes, phones/tablet, portrait/
+  landscape, actual split screen, 130%/200% accessibility text, clipboard, storage recovery and AnkiDroid.
+- This release updates Android. Previously verified Windows 0.5.1 and macOS 0.5.0 downloads are retained unchanged;
+  no new desktop package is implied. Signed final upgrade, CI and publication evidence lives in release status.
+
 ## 0.5.1 (2026-11-03)
 
 - Android: native GitHub update checks and Settings → Updates, release notes, streamed download progress,

@@ -10,7 +10,7 @@
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/version-0.5.1-245a73" alt="Version 0.5.1">
+  <img src="https://img.shields.io/badge/version-0.5.2-245a73" alt="Version 0.5.2">
   <img src="https://img.shields.io/badge/Windows-10%20%7C%2011%20(64--bit)-245a73" alt="Windows 10 and 11, 64-bit">
   <img src="https://img.shields.io/badge/macOS-Apple%20Silicon%20%7C%20Intel-245a73" alt="macOS: Apple Silicon and Intel">
   <img src="https://img.shields.io/badge/Android-7%2B-245a73" alt="Android 7 or later">
@@ -22,6 +22,10 @@
 </p>
 
 ## What it does
+
+**Android 0.5.2:** a redesigned phone/tablet editor, top-right tools drawer, offline Study Mode, native image paste,
+image-inclusive backups and clearer local-save/folder-sync status. Windows downloads remain 0.5.1 and macOS
+downloads remain 0.5.0; these desktop binaries do not contain the new Android interface.
 
 - **Write in Markdown, formatted as you type.** Headings, checklists, tables, highlights, collapsible sections
   and images, with a toolbar, an outline and version history. Notes live in a SQLite database on your PC.
@@ -38,7 +42,8 @@
 - **Sync between your devices.** PCs, Macs and Android phones stay in step through a shared folder (for example
   with Syncthing). Each device keeps its own database, and conflicting edits are kept rather than overwritten.
 - **On your phone.** LocalMind for Android works offline with its own library: phone and tablet
-  layouts, a touch-friendly editor with Cloze, images, backups, sync with your PCs through a folder you choose,
+  layouts, a Gboard-aware editor with touch Cloze/link forms, Focus and read-only Study modes, an AI/tools drawer,
+  gallery/camera/pasted images, image-inclusive backups, sync with your PCs through a folder you choose,
   and AnkiDroid: approved Basic and Cloze cards go to the `#LocalMind` deck, updated in place, never duplicated.
 - **Made for daily use:** resizable panels, Focus Mode, Split View, search with highlights, folders, tags,
   favorites, Inbox, a command palette (Ctrl+K), global Quick Capture
@@ -65,9 +70,9 @@
 
 <table>
   <tr>
-    <td width="25%"><img src="images/android-phone-list.png" alt="LocalMind on an Android phone: the note list with collections' notes and bottom navigation"><br><sub><b>Android phone.</b> Notes, search, places and settings.</sub></td>
-    <td width="25%"><img src="images/android-phone-cards.png" alt="A note on the phone with the cards and organization panel open under it"><br><sub><b>Note tools on the phone.</b> Collections, tags and cards under the note.</sub></td>
-    <td width="50%"><img src="images/android-tablet-note.png" alt="LocalMind on an Android tablet: note list, a note with cloze deletions and a checklist, and the organization panel side by side"><br><sub><b>Android tablet.</b> List, note and tools side by side.</sub></td>
+    <td width="25%"><img src="images/android-premium-phone-list.png" alt="Android Library with synthetic study notes, Favorites and three primary destinations"><br><sub><b>Android Library.</b> Recent notes, Favorites, Inbox and templates.</sub></td>
+    <td width="25%"><img src="images/android-premium-phone-tools.png" alt="Provider-aware top-right tools drawer over a synthetic note"><br><sub><b>Note tools.</b> AI suggestions, manual filing and cards.</sub></td>
+    <td width="50%"><img src="images/android-premium-tablet-study.png" alt="Tablet Study Mode with synthetic Markdown, cloze reveal and linked card previews"><br><sub><b>Offline Study Mode.</b> Read and reveal without changing Anki reviews.</sub></td>
   </tr>
 </table>
 
@@ -80,10 +85,10 @@
 | Windows 10/11 (64-bit) | 0.5.1 | [Download LocalMind for Windows](https://github.com/MohammadAliKid/LocalMind-releases/releases/download/v0.5.1/LocalMind-Setup.exe) |
 | Mac — Apple Silicon | 0.5.0 | [Download LocalMind for Mac — Apple Silicon](https://github.com/MohammadAliKid/LocalMind-releases/releases/download/v0.5.1/LocalMind-0.5.0-mac-arm64.dmg) |
 | Mac — Intel | 0.5.0 | [Download LocalMind for Mac — Intel](https://github.com/MohammadAliKid/LocalMind-releases/releases/download/v0.5.1/LocalMind-0.5.0-mac-x64.dmg) |
-| Android 7+ | 0.5.1 | [Download LocalMind for Android](https://github.com/MohammadAliKid/LocalMind-releases/releases/download/v0.5.1/LocalMind-Android-0.5.1.apk) |
+| Android 7+ | 0.5.2 | [Download LocalMind for Android](https://github.com/MohammadAliKid/LocalMind-releases/releases/download/v0.5.2/LocalMind-Android-0.5.2.apk) |
 
-[Release notes and SHA-256 checksums](https://github.com/MohammadAliKid/LocalMind-releases/releases/tag/v0.5.1)
-· Mac downloads retain version 0.5.0 from the last successful Mac CI run.
+[Release notes and SHA-256 checksums](https://github.com/MohammadAliKid/LocalMind-releases/releases/tag/v0.5.2)
+· Windows retains verified 0.5.1; Mac retains 0.5.0 from the last successful Mac CI run.
 
 **Windows:** run LocalMind-Setup.exe. It installs for your account, with no administrator rights. The installer is
 not Authenticode-signed yet, so SmartScreen may ask for confirmation. Compare its SHA-256 with the release page.
@@ -103,8 +108,9 @@ Requires Android System WebView 111 or newer. AnkiDroid is optional; grant acces
 
 **Existing Android development installations:** save a backup and preserve images separately **before uninstalling**.
 Uninstalling deletes app data. Install the official APK, restore the backup, re-enter AI credentials and choose the
-sync folder again. A different signing certificate cannot update an installation in place. Phone backups currently
-exclude images. Normal updates signed with the permanent release identity preserve app data and permissions.
+sync folder again. A different signing certificate cannot update an installation in place. Backups made with
+Android 0.5.2 include referenced images; older phone backups may require copying images separately.
+Normal updates signed with the permanent release identity preserve app data and permissions.
 
 Android signing certificate SHA-256: `91c92f7cd107dfc977661f0497b2954bfcb5d789f52dcb7f12e022bfcb61bd75`.
 
@@ -115,7 +121,7 @@ Android signing certificate SHA-256: `91c92f7cd107dfc977661f0497b2954bfcb5d789f5
 | LocalMind-Setup.exe | `25f68ebad48053a0f6b6cb2fcda79494fcfa96c90aa0c6c5aeaf96b86571b466` |
 | LocalMind-0.5.0-mac-arm64.dmg | `27e671603cbfbbadaaf6456d491dc6d23c3899ee64cdac5c16bb82de2f7c247a` |
 | LocalMind-0.5.0-mac-x64.dmg | `d213ba27e67c957c85753e74e3a6597f9de759beea9af73d87b2973d51fcb097` |
-| LocalMind-Android-0.5.1.apk | `a03734fab2d4aa056d1c66d11a8e0c1a251f2441a574cb1db8ae5d8498b90c48` |
+| LocalMind-Android-0.5.2.apk | `0a61b7b0b860f9849a4a1a45f6b361da3ca08fb13465c8b640114919713de539` |
 
 </details>
 
@@ -134,6 +140,9 @@ LocalMind never switches providers or models on its own, and never falls back to
 | LM Studio | Free, runs on your own computer | Yes | No (runs on a PC) |
 
 - **Free-only mode** sends a request only when the provider's own data shows the model is free right now.
+- **Android Gemini 0.5.2:** Recommended/Fast/Advanced groups simplify the account catalog; All compatible keeps
+  advanced text models available. Limits and preview warnings are shown. Billing is not inferred from a model name
+  or API-key connection, so unverified Gemini choices are disabled in strict Free-only mode.
 - **Consent first:** before a new provider receives any note, you see its privacy terms and agree.
 - **Keys and sign-ins** are encrypted on each device (Windows DPAPI, macOS Keychain, Android Keystore). They are
   never synced, never in backups, logs or the sync folder.
@@ -156,6 +165,11 @@ LocalMind never switches providers or models on its own, and never falls back to
 
 ## Keyboard shortcuts
 
+These are desktop shortcuts. Android provides touch formatting, Undo/Redo and Cloze/link forms above the keyboard.
+Tap the top-right tools button for AI, manual filing and cards; use the overflow menu for Focus or Study Mode.
+Settings → Sync chooses the shared folder; pair that folder in your file-sync app. Local save and completed folder
+writes have separate indicators, and conflicts keep both versions until you choose. Never sync a live SQLite file.
+
 On a Mac, use ⌘ for Ctrl and ⌥ for Alt.
 
 | Keys | Action | Keys | Action |
@@ -171,10 +185,15 @@ On a Mac, use ⌘ for Ctrl and ⌥ for Alt.
 
 - **Mac installation:** the published Mac builds are not Developer ID signed or notarized; the first launch may need approval in Privacy & Security. New Mac packaging is waiting for Mac CI.
 - **Android:** the GitHub APK uses the permanent release key and was tested on an emulator; physical-device testing remains outstanding.
-- **Android:** Sign in with ChatGPT, the OpenAI API key and LM Studio are desktop-only; Image Occlusion cards are
-  not sent to AnkiDroid; backups made on the phone don't include images; Android saves the database file shortly
-  after each change and when you leave the app, so a crash within a second or two of typing can lose that last
-  change. Needs Android System WebView 111 or newer (updated through Google Play).
+- **Android AI:** independent Android ChatGPT-plan distribution eligibility is not established in official
+  documentation, so plan sign-in is unavailable. OpenAI API-key and LM Studio support remain desktop-only.
+  Gemini, OpenRouter and Anthropic use their own API credentials; browsing settings never runs inference.
+  Gemini billing depends on the account/model and is marked unverified; strict Free-only disables unverified choices.
+- **Android data:** Image Occlusion cards are not sent to AnkiDroid. Android 0.5.2 backups include referenced images;
+  older text-only backups can report missing images for explicit recovery. Saved locally waits for the actual file
+  write; text still being edited has a crash draft, and force-killing Android before storage commits can lose it.
+  Folder updated confirms local folder writes, not receipt on another device. No reliable always-on background sync.
+  Requires Android System WebView 111 or newer. The current library view is bounded to 500 notes; search finds older notes.
 - **Unsigned Windows installer:** expect a SmartScreen warning until it's code-signed.
 - **Real-device testing:** sync was tested between independent installations on one PC and between an Android
   emulator and a desktop instance through real Syncthing; not yet between physical PCs and phones. AI providers
@@ -189,6 +208,8 @@ On a Mac, use ⌘ for Ctrl and ⌥ for Alt.
 - [x] 0.4: new editor, version history, Image Occlusion, AnKing note types, more AI providers, workspace layout
 - [x] 0.5: macOS and Android test builds, AnkiDroid, phone sync through a chosen folder, quit fix
 - [x] 0.5.1: permanent Android release signing, native GitHub updates, public Mac/Android downloads, isolated CI
+- [x] 0.5.2: Android editor redesign, offline Study Mode, image-inclusive backups and durable sync recovery
+- [ ] 0.6.0: encrypted Google Drive sync, simplified onboarding and settings overlays
 - [ ] Signing (Windows and Apple Developer ID), Google Play, tests on physical devices, sync
   journal compaction, Markdown export
 
