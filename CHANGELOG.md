@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.5.3 (2026-11-05)
+
+- Android now fits system bars and keyboard across navigation modes and orientations.
+- Settings lets users choose or change the shared Syncthing folder and keeps its Android access permission after restart.
+
 ## 0.5.2 (2026-11-04)
 
 > **2026-11-05 macOS notice:** Retained Mac 0.5.0 downloads are affected: Apple Silicon has an invalid resource seal; Intel is unsigned and awaiting final-DMG validation. Defer Mac installation pending corrected builds. Windows/Android are unaffected. See [Mac launch status](docs/mac-launch.md).

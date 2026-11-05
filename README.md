@@ -10,7 +10,7 @@
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/version-0.5.2-245a73" alt="Version 0.5.2">
+  <img src="https://img.shields.io/badge/version-0.5.3-245a73" alt="Version 0.5.3">
   <img src="https://img.shields.io/badge/Windows-10%20%7C%2011%20(64--bit)-245a73" alt="Windows 10 and 11, 64-bit">
   <img src="https://img.shields.io/badge/macOS-Apple%20Silicon%20%7C%20Intel-245a73" alt="macOS: Apple Silicon and Intel">
   <img src="https://img.shields.io/badge/Android-7%2B-245a73" alt="Android 7 or later">
@@ -22,6 +22,8 @@
 </p>
 
 ## What it does
+
+**Android 0.5.3:** The editor and buttons fit inside the system bars when rotating or typing. Choose or change the shared Syncthing folder in Settings → Sync between devices.
 
 **Android 0.5.2:** a redesigned phone/tablet editor, top-right tools drawer, offline Study Mode, native image paste,
 image-inclusive backups and clearer local-save/folder-sync status. Windows downloads remain 0.5.1 and macOS
@@ -87,9 +89,9 @@ downloads remain 0.5.0; these desktop binaries do not contain the new Android in
 | Windows 10/11 (64-bit) | 0.5.1 | [Download LocalMind for Windows](https://github.com/MohammadAliKid/LocalMind-releases/releases/download/v0.5.1/LocalMind-Setup.exe) |
 | Mac — Apple Silicon | 0.5.0 | [Download LocalMind for Mac — Apple Silicon](https://github.com/MohammadAliKid/LocalMind-releases/releases/download/v0.5.1/LocalMind-0.5.0-mac-arm64.dmg) |
 | Mac — Intel | 0.5.0 | [Download LocalMind for Mac — Intel](https://github.com/MohammadAliKid/LocalMind-releases/releases/download/v0.5.1/LocalMind-0.5.0-mac-x64.dmg) |
-| Android 7+ | 0.5.2 | [Download LocalMind for Android](https://github.com/MohammadAliKid/LocalMind-releases/releases/download/v0.5.2/LocalMind-Android-0.5.2.apk) |
+| Android 7+ | 0.5.3 | [Download LocalMind for Android](https://github.com/MohammadAliKid/LocalMind-releases/releases/download/v0.5.3/LocalMind-Android-0.5.3.apk) |
 
-[Release notes and SHA-256 checksums](https://github.com/MohammadAliKid/LocalMind-releases/releases/tag/v0.5.2)
+[Release notes and SHA-256 checksums](https://github.com/MohammadAliKid/LocalMind-releases/releases/tag/v0.5.3)
 · Windows retains verified 0.5.1; Mac retains 0.5.0 from the last successful Mac CI run.
 
 **Windows:** run LocalMind-Setup.exe. It installs for your account, with no administrator rights. The installer is
@@ -123,7 +125,7 @@ Android signing certificate SHA-256: `91c92f7cd107dfc977661f0497b2954bfcb5d789f5
 | LocalMind-Setup.exe | `25f68ebad48053a0f6b6cb2fcda79494fcfa96c90aa0c6c5aeaf96b86571b466` |
 | LocalMind-0.5.0-mac-arm64.dmg | `27e671603cbfbbadaaf6456d491dc6d23c3899ee64cdac5c16bb82de2f7c247a` |
 | LocalMind-0.5.0-mac-x64.dmg | `d213ba27e67c957c85753e74e3a6597f9de759beea9af73d87b2973d51fcb097` |
-| LocalMind-Android-0.5.2.apk | `0a61b7b0b860f9849a4a1a45f6b361da3ca08fb13465c8b640114919713de539` |
+| LocalMind-Android-0.5.3.apk | `e2c8d1e845b3461992b3734d7445f69fe4f5e33c934cd4a4104c0678c690667c` |
 
 </details>
 
