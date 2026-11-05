@@ -78,6 +78,8 @@ downloads remain 0.5.0; these desktop binaries do not contain the new Android in
 
 <sub>All screenshots use synthetic demonstration notes.</sub>
 
+> **Mac downloads affected:** The retained macOS 0.5.0 Apple Silicon package has an invalid resource seal; Intel is unsigned and also awaiting final-DMG validation. Please defer installing these Mac builds until corrected downloads are published. Windows and Android are unaffected. See [Mac launch status](docs/mac-launch.md).
+
 ## Install
 
 | Platform | Version | Download |

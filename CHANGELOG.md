@@ -2,6 +2,8 @@
 
 ## 0.5.2 (2026-11-04)
 
+> **2026-11-05 macOS notice:** Retained Mac 0.5.0 downloads are affected: Apple Silicon has an invalid resource seal; Intel is unsigned and awaiting final-DMG validation. Defer Mac installation pending corrected builds. Windows/Android are unaffected. See [Mac launch status](docs/mac-launch.md).
+
 - Android redesign: system typography, light/dark accents, Library/Search/Settings navigation, Recent/Favorites/
   Inbox, editable templates, text sharing, a minimal editor, Focus Mode and a top-right provider-aware tools drawer.
 - Fix duplicate IME insets so Gboard leaves the editor and caret visible. Preserve the editor through layout,
