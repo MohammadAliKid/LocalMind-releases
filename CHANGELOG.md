@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.5.4 (2026-11-06)
+
+- Send selected text to LocalMind from the Android share sheet or compatible text-selection menus. Preview it, enter a title, or append it to an existing local note.
+
 ## 0.5.3 (2026-11-05)
 
 - Android now fits system bars and keyboard across navigation modes and orientations.
