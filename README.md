@@ -4,6 +4,8 @@
 
 <h1 align="center">LocalMind</h1>
 
+<p align="center"><a href="https://mohammadalikid.github.io/LocalMind-releases/">Official website</a> · <a href="https://mohammadalikid.github.io/LocalMind-releases/privacy/">Privacy Policy</a> · <a href="https://mohammadalikid.github.io/LocalMind-releases/terms/">Terms of Use</a></p>
+
 <p align="center">
   Local-first notes that organize themselves, surface related ideas and turn into Anki flashcards.<br>
   Windows and Android · macOS downloads for Apple Silicon and Intel

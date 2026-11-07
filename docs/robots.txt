@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://mohammadalikid.github.io/LocalMind-releases/sitemap.xml
