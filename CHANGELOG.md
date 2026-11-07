@@ -1,5 +1,20 @@
 # Changelog
 
+## 0.6.0 (2026-11-07)
+
+Windows 0.6.0 and Android 0.6.0. macOS downloads remain 0.5.0 (see the Mac launch notice).
+
+- Study Mode on Windows and Android: study all notes, selected notes, Inbox, Favorites, a collection, tags or a
+  search, read-only, with progress, Next/Previous, arrow keys (Windows) and swipes (Android). Never changes Anki.
+- Merge Notes: combine selected notes into a new master note (AI-organized with disagreements flagged, or a simple
+  merge without AI). Preview, edit and approve; originals, their flashcards and Anki links are unchanged.
+- Sources: manual references, Find Sources (real OpenAlex and Wikipedia records for terms you review) and Update
+  Sources (recheck links and DOIs; you approve every change).
+- Generate flashcards for several selected notes at once, only for notes without cards.
+- Android: long-press selection; swipe right to delete (with Undo), swipe left to favorite.
+- Windows: compact Settings window with section navigation; optional first-run guide on new installs.
+- Google Drive sync is not available yet; folder sync with Syncthing is unchanged.
+
 ## 0.5.4 (2026-11-06)
 
 - Send selected text to LocalMind from the Android share sheet or compatible text-selection menus. Preview it, enter a title, or append it to an existing local note.

@@ -10,7 +10,7 @@
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/version-0.5.4-245a73" alt="Version 0.5.4">
+  <img src="https://img.shields.io/badge/version-0.6.0-245a73" alt="Version 0.6.0">
   <img src="https://img.shields.io/badge/Windows-10%20%7C%2011%20(64--bit)-245a73" alt="Windows 10 and 11, 64-bit">
   <img src="https://img.shields.io/badge/macOS-Apple%20Silicon%20%7C%20Intel-245a73" alt="macOS: Apple Silicon and Intel">
   <img src="https://img.shields.io/badge/Android-7%2B-245a73" alt="Android 7 or later">
@@ -23,6 +23,26 @@
 
 ## What it does
 
+**LocalMind 0.6.0 (Windows and Android):**
+
+- **Study Mode.** Study all notes, the notes you selected, Inbox, Favorites, a collection, chosen tags or a search,
+  read-only and distraction-free, with progress and Next/Previous (arrow keys on Windows, swipes on Android).
+  It remembers recent selections and where you stopped, and never changes your notes or Anki.
+- **Merge Notes.** Select related notes and combine them into a new master note: AI-organized with disagreements
+  flagged, or a simple merge without AI. Preview and edit before saving; the originals, their flashcards and Anki
+  links stay exactly as they are, and the master note links back to each original.
+- **Sources.** Add references by hand, let **Find Sources** look up real OpenAlex and Wikipedia records for search
+  terms you review first (AI may suggest terms, never the references), and **Update Sources** to recheck links and
+  DOIs before you approve changes. Sources travel with the note through sync and backups.
+- **Bulk flashcards.** Generate cards for several selected notes at once; notes that already have cards are skipped.
+- **Android gestures.** Long-press to select notes; swipe right to delete (with Undo) or left to favorite.
+- **Windows:** a compact Settings window with section navigation, and an optional first-run guide.
+
+<p>
+<img src="images/v060-merge-desktop.png" width="420" alt="Merge Notes preview on Windows with synthetic notes and a flagged disagreement">
+<img src="images/v060-android-selection.png" width="200" alt="Android selection mode with synthetic notes and the action bar">
+</p>
+
 **Android 0.5.4:** Share selected text to LocalMind, or use Send to LocalMind in compatible selection menus. Preview it, add an optional title, save a new local note or append to an existing note.
 
 <p><img src="images/android-share-054.png" width="280" alt="Android Save to LocalMind sheet with synthetic shared text, optional title and new-note or append actions"></p>
@@ -30,8 +50,7 @@
 **Android 0.5.3:** The editor and buttons fit inside the system bars when rotating or typing. Choose or change the shared Syncthing folder in Settings → Sync between devices.
 
 **Android 0.5.2:** a redesigned phone/tablet editor, top-right tools drawer, offline Study Mode, native image paste,
-image-inclusive backups and clearer local-save/folder-sync status. Windows downloads remain 0.5.1 and macOS
-downloads remain 0.5.0; these desktop binaries do not contain the new Android interface.
+image-inclusive backups and clearer local-save/folder-sync status.
 
 - **Write in Markdown, formatted as you type.** Headings, checklists, tables, highlights, collapsible sections
   and images, with a toolbar, an outline and version history. Notes live in a SQLite database on your PC.
@@ -84,19 +103,19 @@ downloads remain 0.5.0; these desktop binaries do not contain the new Android in
 
 <sub>All screenshots use synthetic demonstration notes.</sub>
 
-> **Mac downloads affected:** The retained macOS 0.5.0 Apple Silicon package has an invalid resource seal; Intel is unsigned and also awaiting final-DMG validation. Please defer installing these Mac builds until corrected downloads are published. Windows and Android are unaffected. See [Mac launch status](docs/mac-launch.md).
+> **Mac downloads affected:** The retained macOS 0.5.0 Apple Silicon package has an invalid resource seal; Intel is unsigned and awaiting final-DMG validation. Defer installing these Mac builds until corrected downloads are published. See [Mac launch status](https://github.com/MohammadAliKid/LocalMind-releases/blob/main/docs/mac-launch.md).
 
 ## Install
 
 | Platform | Version | Download |
 |---|---|---|
-| Windows 10/11 (64-bit) | 0.5.1 | [Download LocalMind for Windows](https://github.com/MohammadAliKid/LocalMind-releases/releases/download/v0.5.1/LocalMind-Setup.exe) |
+| Windows 10/11 (64-bit) | 0.6.0 | [Download LocalMind for Windows](https://github.com/MohammadAliKid/LocalMind-releases/releases/download/v0.6.0/LocalMind-Setup.exe) |
 | Mac — Apple Silicon | 0.5.0 | [Download LocalMind for Mac — Apple Silicon](https://github.com/MohammadAliKid/LocalMind-releases/releases/download/v0.5.1/LocalMind-0.5.0-mac-arm64.dmg) |
 | Mac — Intel | 0.5.0 | [Download LocalMind for Mac — Intel](https://github.com/MohammadAliKid/LocalMind-releases/releases/download/v0.5.1/LocalMind-0.5.0-mac-x64.dmg) |
-| Android 7+ | 0.5.4 | [Download LocalMind for Android](https://github.com/MohammadAliKid/LocalMind-releases/releases/download/v0.5.4/LocalMind-Android-0.5.4.apk) |
+| Android 7+ | 0.6.0 | [Download LocalMind for Android](https://github.com/MohammadAliKid/LocalMind-releases/releases/download/v0.6.0/LocalMind-Android-0.6.0.apk) |
 
-[Release notes and SHA-256 checksums](https://github.com/MohammadAliKid/LocalMind-releases/releases/tag/v0.5.4)
-· Windows retains verified 0.5.1; Mac retains 0.5.0 from the last successful Mac CI run.
+[Release notes and SHA-256 checksums](https://github.com/MohammadAliKid/LocalMind-releases/releases/tag/v0.6.0)
+· Windows and Android are 0.6.0; Mac retains 0.5.0 from the last successful Mac CI run.
 
 **Windows:** run LocalMind-Setup.exe. It installs for your account, with no administrator rights. The installer is
 not Authenticode-signed yet, so SmartScreen may ask for confirmation. Compare its SHA-256 with the release page.
@@ -126,10 +145,10 @@ Android signing certificate SHA-256: `91c92f7cd107dfc977661f0497b2954bfcb5d789f5
 
 | File | SHA-256 |
 |---|---|
-| LocalMind-Setup.exe | `25f68ebad48053a0f6b6cb2fcda79494fcfa96c90aa0c6c5aeaf96b86571b466` |
+| LocalMind-Setup.exe | `e6ae98fc4a2366e65573516b5388664ccd7a97b8be062cb14bae80f4edd63edc` |
 | LocalMind-0.5.0-mac-arm64.dmg | `27e671603cbfbbadaaf6456d491dc6d23c3899ee64cdac5c16bb82de2f7c247a` |
 | LocalMind-0.5.0-mac-x64.dmg | `d213ba27e67c957c85753e74e3a6597f9de759beea9af73d87b2973d51fcb097` |
-| LocalMind-Android-0.5.4.apk | `56d81e8745d08da0e8b2970328716e9e50cd62e3969177c0f77bf5b27b3d9a9f` |
+| LocalMind-Android-0.6.0.apk | `e6f534e97e8a3193c36fe5fa08ee5786e5c2f20220fb34b25298ae93e6a4153a` |
 
 </details>
 
@@ -188,9 +207,14 @@ On a Mac, use ⌘ for Ctrl and ⌥ for Alt.
 | Ctrl+B / I / U | Bold / italic / underline | Ctrl+Shift+H | Highlight |
 | Ctrl+Alt+1 / 2 / 3 | Heading 1 / 2 / 3 | Ctrl+Shift+7 / 8 / 9 | Numbered / bulleted / task list |
 | Ctrl+Shift+C | Cloze (next number) | Ctrl+Shift+Alt+C | Cloze (same number) |
+| ← / → (Study Mode) | Previous / next note | Esc | Leave Study Mode or Settings |
 
 ## Known limitations
 
+- **Google Drive sync is not available yet.** The encrypted Drive transport is built and tested against a simulated
+  Drive, but Google sign-in has not been set up or tested with real accounts. Use folder sync (Syncthing) for now.
+- **Sources:** search covers OpenAlex and Wikipedia only; results match search terms and still need your judgment.
+  On Android, Update Sources checks DOI records but not general web links (link checks run in the desktop app).
 - **Mac installation:** the published Mac builds are not Developer ID signed or notarized; the first launch may need approval in Privacy & Security. New Mac packaging is waiting for Mac CI.
 - **Android:** the GitHub APK uses the permanent release key and was tested on an emulator; physical-device testing remains outstanding.
 - **Android AI:** independent Android ChatGPT-plan distribution eligibility is not established in official
@@ -217,7 +241,8 @@ On a Mac, use ⌘ for Ctrl and ⌥ for Alt.
 - [x] 0.5: macOS and Android test builds, AnkiDroid, phone sync through a chosen folder, quit fix
 - [x] 0.5.1: permanent Android release signing, native GitHub updates, public Mac/Android downloads, isolated CI
 - [x] 0.5.2: Android editor redesign, offline Study Mode, image-inclusive backups and durable sync recovery
-- [ ] 0.6.0: encrypted Google Drive sync, simplified onboarding and settings overlays
+- [x] 0.6.0: Study Mode, Merge Notes, Sources, bulk flashcards, Android gestures, Settings window, first-run guide
+- [ ] Google Drive sync (encrypted transport built; Google sign-in setup pending)
 - [ ] Signing (Windows and Apple Developer ID), Google Play, tests on physical devices, sync
   journal compaction, Markdown export
 
