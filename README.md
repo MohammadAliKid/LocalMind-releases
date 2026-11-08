@@ -12,7 +12,7 @@
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/version-0.6.0-245a73" alt="Version 0.6.0">
+  <img src="https://img.shields.io/badge/version-0.6.1-245a73" alt="Version 0.6.1">
   <img src="https://img.shields.io/badge/Windows-10%20%7C%2011%20(64--bit)-245a73" alt="Windows 10 and 11, 64-bit">
   <img src="https://img.shields.io/badge/macOS-Apple%20Silicon%20%7C%20Intel-245a73" alt="macOS: Apple Silicon and Intel">
   <img src="https://img.shields.io/badge/Android-7%2B-245a73" alt="Android 7 or later">
@@ -24,6 +24,15 @@
 </p>
 
 ## What it does
+
+**LocalMind 0.6.1 (Windows and Android): Google Drive sync.** Sign in with Google (in your browser on
+Windows, through Google Play services on Android) and your notes, images and deletions sync between your devices
+through an encrypted, app-private folder in your own Drive. LocalMind only requests the `drive.appdata` permission,
+so it cannot see your other Drive files. Pair another device with the recovery code shown on the first, and keep that
+code safe: you need it to restore your library. Works offline; concurrent edits keep both versions; disconnecting
+keeps every local note. Syncthing folder sync remains under Settings → Sync → Advanced.
+
+<p><img src="images/v061-drive-android.png" width="240" alt="Android Settings showing a connected encrypted Google Drive library with Sync now, Show pairing code and Disconnect; no account details"></p>
 
 **LocalMind 0.6.0 (Windows and Android):**
 
@@ -66,8 +75,8 @@ image-inclusive backups and clearer local-save/folder-sync status.
   duplicates and without touching your review history.
 - **Your choice of AI.** Your ChatGPT plan, an OpenAI API key, Google Gemini, OpenRouter, the Claude API, or a
   model running in LM Studio on your PC, with a strict Free-only mode and a privacy notice for each.
-- **Sync between your devices.** PCs, Macs and Android phones stay in step through a shared folder (for example
-  with Syncthing). Each device keeps its own database, and conflicting edits are kept rather than overwritten.
+- **Sync between your devices.** Windows PCs and Android phones stay in step through your own Google
+  Drive (encrypted, app-private), and PCs, Macs and phones through a shared folder (for example with Syncthing). Each device keeps its own database, and conflicting edits are kept rather than overwritten.
 - **On your phone.** LocalMind for Android works offline with its own library: phone and tablet
   layouts, a Gboard-aware editor with touch Cloze/link forms, Focus and read-only Study modes, an AI/tools drawer,
   gallery/camera/pasted images, image-inclusive backups, sync with your PCs through a folder you choose,
@@ -111,13 +120,13 @@ image-inclusive backups and clearer local-save/folder-sync status.
 
 | Platform | Version | Download |
 |---|---|---|
-| Windows 10/11 (64-bit) | 0.6.0 | [Download LocalMind for Windows](https://github.com/MohammadAliKid/LocalMind-releases/releases/download/v0.6.0/LocalMind-Setup.exe) |
+| Windows 10/11 (64-bit) | 0.6.1 | [Download LocalMind for Windows](https://github.com/MohammadAliKid/LocalMind-releases/releases/download/v0.6.1/LocalMind-Setup.exe) |
 | Mac — Apple Silicon | 0.5.0 | [Download LocalMind for Mac — Apple Silicon](https://github.com/MohammadAliKid/LocalMind-releases/releases/download/v0.5.1/LocalMind-0.5.0-mac-arm64.dmg) |
 | Mac — Intel | 0.5.0 | [Download LocalMind for Mac — Intel](https://github.com/MohammadAliKid/LocalMind-releases/releases/download/v0.5.1/LocalMind-0.5.0-mac-x64.dmg) |
-| Android 7+ | 0.6.0 | [Download LocalMind for Android](https://github.com/MohammadAliKid/LocalMind-releases/releases/download/v0.6.0/LocalMind-Android-0.6.0.apk) |
+| Android 7+ | 0.6.1 | [Download LocalMind for Android](https://github.com/MohammadAliKid/LocalMind-releases/releases/download/v0.6.1/LocalMind-Android-0.6.1.apk) |
 
-[Release notes and SHA-256 checksums](https://github.com/MohammadAliKid/LocalMind-releases/releases/tag/v0.6.0)
-· Windows and Android are 0.6.0; Mac retains 0.5.0 from the last successful Mac CI run.
+[Release notes and SHA-256 checksums](https://github.com/MohammadAliKid/LocalMind-releases/releases/tag/v0.6.1)
+· Windows and Android are 0.6.1; Mac retains 0.5.0 from the last successful Mac CI run.
 
 **Windows:** run LocalMind-Setup.exe. It installs for your account, with no administrator rights. The installer is
 not Authenticode-signed yet, so SmartScreen may ask for confirmation. Compare its SHA-256 with the release page.
@@ -147,10 +156,10 @@ Android signing certificate SHA-256: `91c92f7cd107dfc977661f0497b2954bfcb5d789f5
 
 | File | SHA-256 |
 |---|---|
-| LocalMind-Setup.exe | `e6ae98fc4a2366e65573516b5388664ccd7a97b8be062cb14bae80f4edd63edc` |
+| LocalMind-Setup.exe | `c08e5d9c93bb8c53e62a3aad41869c04fae4169fcf0eaab2a682dd48a117227d` |
 | LocalMind-0.5.0-mac-arm64.dmg | `27e671603cbfbbadaaf6456d491dc6d23c3899ee64cdac5c16bb82de2f7c247a` |
 | LocalMind-0.5.0-mac-x64.dmg | `d213ba27e67c957c85753e74e3a6597f9de759beea9af73d87b2973d51fcb097` |
-| LocalMind-Android-0.6.0.apk | `e6f534e97e8a3193c36fe5fa08ee5786e5c2f20220fb34b25298ae93e6a4153a` |
+| LocalMind-Android-0.6.1.apk | `650728e6742aa43d4cff98bd9aaea3d826b16a6a086298b869eb60ee7e331e46` |
 
 </details>
 
@@ -213,8 +222,9 @@ On a Mac, use ⌘ for Ctrl and ⌥ for Alt.
 
 ## Known limitations
 
-- **Google Drive sync is not available yet.** The encrypted Drive transport is built and tested against a simulated
-  Drive, but Google sign-in has not been set up or tested with real accounts. Use folder sync (Syncthing) for now.
+- **Google Drive sign-in screen:** Google shows the website address (mohammadalikid.github.io) instead of the
+  LocalMind name and logo, because brand verification needs a custom domain. The permission requested is the same
+  (`drive.appdata` only). Losing every paired device **and** the recovery code means the Drive copy cannot be decrypted.
 - **Sources:** search covers OpenAlex and Wikipedia only; results match search terms and still need your judgment.
   On Android, Update Sources checks DOI records but not general web links (link checks run in the desktop app).
 - **Mac installation:** the published Mac builds are not Developer ID signed or notarized; the first launch may need approval in Privacy & Security. New Mac packaging is waiting for Mac CI.
@@ -244,7 +254,7 @@ On a Mac, use ⌘ for Ctrl and ⌥ for Alt.
 - [x] 0.5.1: permanent Android release signing, native GitHub updates, public Mac/Android downloads, isolated CI
 - [x] 0.5.2: Android editor redesign, offline Study Mode, image-inclusive backups and durable sync recovery
 - [x] 0.6.0: Study Mode, Merge Notes, Sources, bulk flashcards, Android gestures, Settings window, first-run guide
-- [ ] Google Drive sync (encrypted transport built; Google sign-in setup pending)
+- [x] 0.6.1: encrypted Google Drive sync for Windows and Android
 - [ ] Signing (Windows and Apple Developer ID), Google Play, tests on physical devices, sync
   journal compaction, Markdown export
 
