@@ -1,5 +1,19 @@
 # Changelog
 
+## 0.6.7 — 2026-11-08 (candidate; not published)
+
+- New official **Open volume** brain-and-book identity, selected by the owner: consistent app icons, headers,
+  Settings branding, favicons and social artwork in LocalMind's slate/teal palette.
+- Windows executable, installer and shortcut icons retain the existing Squirrel application identity and update key.
+- Android launcher, adaptive, round, themed monochrome and splash icons; permanent certificate and package identity
+  retained, versionCode advances from 13 to 14. Current shared generation-stop/timeout fixes are included.
+- Refreshed repository overviews and website branding, preserving feedback delivery, Google verification,
+  privacy/terms and release history. AI remains optional and paid providers retain their own billing/limits.
+- Notes, attachments, flashcard/Anki identities, encrypted credentials, sync and backup formats remain unchanged.
+- Mac icon source assets are prepared only. Existing affected 0.5.0 downloads stay unchanged; signing repair and
+  native Mac validation remain future 0.7.0 / draft PR #7. Windows is not Authenticode-signed.
+
+
 ## 0.6.6 — 2026-11-08
 
 - New **Awaiting approval** view (sidebar and command palette): every suggested flashcard from all notes in one
