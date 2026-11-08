@@ -12,7 +12,7 @@
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/version-0.6.1-245a73" alt="Version 0.6.1">
+  <img src="https://img.shields.io/badge/version-0.6.5-245a73" alt="Version 0.6.5">
   <img src="https://img.shields.io/badge/Windows-10%20%7C%2011%20(64--bit)-245a73" alt="Windows 10 and 11, 64-bit">
   <img src="https://img.shields.io/badge/macOS-Apple%20Silicon%20%7C%20Intel-245a73" alt="macOS: Apple Silicon and Intel">
   <img src="https://img.shields.io/badge/Android-7%2B-245a73" alt="Android 7 or later">
@@ -24,6 +24,13 @@
 </p>
 
 ## What it does
+
+**Windows 0.6.5: a calmer desktop workspace.** Refined light/dark themes, clearer navigation and note cards,
+a borderless writing page, consistent icons, compact formatting with overflow, grouped note tools, refreshed
+Settings and Study Mode, and better keyboard focus and narrow/split layouts. Your notes, Markdown, Anki identities,
+Google Drive library and backups stay intact. Android remains 0.6.1/code13; Mac downloads remain affected 0.5.0.
+
+<table><tr><td width="50%"><img src="images/settings-desktop.png" alt="Redesigned Windows Settings with synthetic demo configuration"><br><sub>Settings.</sub></td><td width="50%"><img src="images/study-desktop.png" alt="Redesigned dark Study Mode with synthetic learning notes"><br><sub>Study Mode.</sub></td></tr></table>
 
 **LocalMind 0.6.1 (Windows and Android): Google Drive sync.** Sign in with Google (in your browser on
 Windows, through Google Play services on Android) and your notes, images and deletions sync between your devices
@@ -120,13 +127,13 @@ image-inclusive backups and clearer local-save/folder-sync status.
 
 | Platform | Version | Download |
 |---|---|---|
-| Windows 10/11 (64-bit) | 0.6.1 | [Download LocalMind for Windows](https://github.com/MohammadAliKid/LocalMind-releases/releases/download/v0.6.1/LocalMind-Setup.exe) |
+| Windows 10/11 (64-bit) | 0.6.5 | [Download LocalMind for Windows](https://github.com/MohammadAliKid/LocalMind-releases/releases/download/v0.6.5/LocalMind-Setup.exe) |
 | Mac — Apple Silicon | 0.5.0 | [Download LocalMind for Mac — Apple Silicon](https://github.com/MohammadAliKid/LocalMind-releases/releases/download/v0.5.1/LocalMind-0.5.0-mac-arm64.dmg) |
 | Mac — Intel | 0.5.0 | [Download LocalMind for Mac — Intel](https://github.com/MohammadAliKid/LocalMind-releases/releases/download/v0.5.1/LocalMind-0.5.0-mac-x64.dmg) |
 | Android 7+ | 0.6.1 | [Download LocalMind for Android](https://github.com/MohammadAliKid/LocalMind-releases/releases/download/v0.6.1/LocalMind-Android-0.6.1.apk) |
 
-[Release notes and SHA-256 checksums](https://github.com/MohammadAliKid/LocalMind-releases/releases/tag/v0.6.1)
-· Windows and Android are 0.6.1; Mac retains 0.5.0 from the last successful Mac CI run.
+[Release notes and SHA-256 checksums](https://github.com/MohammadAliKid/LocalMind-releases/releases/tag/v0.6.5)
+· Windows 0.6.5; Android 0.6.1/code13 unchanged; Mac 0.5.0 downloads remain affected (defer installation).
 
 **Windows:** run LocalMind-Setup.exe. It installs for your account, with no administrator rights. The installer is
 not Authenticode-signed yet, so SmartScreen may ask for confirmation. Compare its SHA-256 with the release page.
@@ -156,7 +163,7 @@ Android signing certificate SHA-256: `91c92f7cd107dfc977661f0497b2954bfcb5d789f5
 
 | File | SHA-256 |
 |---|---|
-| LocalMind-Setup.exe | `c08e5d9c93bb8c53e62a3aad41869c04fae4169fcf0eaab2a682dd48a117227d` |
+| LocalMind-Setup.exe | `ec4d1e3d22f5408cf0d81ea6815ab5923427308257a570d6be9dec9613046a0e` |
 | LocalMind-0.5.0-mac-arm64.dmg | `27e671603cbfbbadaaf6456d491dc6d23c3899ee64cdac5c16bb82de2f7c247a` |
 | LocalMind-0.5.0-mac-x64.dmg | `d213ba27e67c957c85753e74e3a6597f9de759beea9af73d87b2973d51fcb097` |
 | LocalMind-Android-0.6.1.apk | `650728e6742aa43d4cff98bd9aaea3d826b16a6a086298b869eb60ee7e331e46` |

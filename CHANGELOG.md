@@ -1,5 +1,26 @@
 # Changelog
 
+## 0.6.5 — 2026-11-08
+
+- Windows desktop redesign: cohesive light/dark themes, clearer navigation and note library, a borderless writing
+  page, consistent line icons, compact formatting with overflow, grouped tools, refreshed Settings and Study Mode.
+- Improve keyboard focus in dialogs, platform shortcut labels, reduced motion, narrow-window and split-pane layouts.
+  Markdown remains unchanged on disk; notes, Anki NoteUIDs, attachments, sync and backups retain their identities.
+- Windows-only release. Android remains 0.6.1/code13 with its existing APK and signed updater. Mac retains the
+  affected 0.5.0 downloads: defer installing them. Mac signing repair and genuine Apple Silicon validation stay on
+  draft PR #7 for the future coordinated 0.7.0 release.
+- Windows installer is not Authenticode-signed. Updates retain the existing Ed25519 signing identity.
+
+## 0.6.1 (2026-11-08)
+
+- Google Drive sync (optional): sign in with Google on Windows (browser) or Android (Google Play services) and sync
+  notes, images and deletions between your devices through an encrypted, app-private Drive folder. LocalMind only
+  requests the `drive.appdata` permission and cannot see your other Drive files. Pair a second device with the
+  recovery code shown on the first; keep that code safe, it is needed to restore your library.
+- Works offline; concurrent edits keep both versions. Disconnecting or revoking access keeps every local note.
+- Google's sign-in screen shows the website address instead of the LocalMind name and logo (branding not verified).
+- Protect cancelled sign-ins and Drive setup/disconnect transitions. Syncthing folder sync remains under Advanced.
+
 ## 0.6.0 (2026-11-07)
 
 Windows 0.6.0 and Android 0.6.0. macOS downloads remain 0.5.0 (see the Mac launch notice).
