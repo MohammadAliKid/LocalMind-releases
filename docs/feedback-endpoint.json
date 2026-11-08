@@ -1,0 +1,4 @@
+{
+  "enabled": true,
+  "endpoint": "https://localmind-feedback.mohamad-khouqeer.workers.dev/v1/feedback"
+}
