@@ -1,5 +1,28 @@
 # Changelog
 
+## 0.6.6 — 2026-11-08
+
+- New **Awaiting approval** view (sidebar and command palette): every suggested flashcard from all notes in one
+  place, with its note and collection. Search, filter and sort; approve or reject one card or many at once; undo;
+  jump to the source note. Approved cards go to Anki with the usual sync. Rejecting never deletes a note or a card
+  that is already in Anki.
+- Fixed: cards that are already in Anki could show as "awaiting approval" (for example after another device's
+  older copy synced, or after a restore). LocalMind now checks Anki by each card's permanent ID, without
+  changing anything in Anki, and marks those cards approved again. If Anki isn't running, the list says it
+  couldn't check. A note with cards in Anki *and* new suggestions now shows both counts.
+- Fixed: flashcard generation (notably with Gemini) could keep "Generating…" forever after the first card. A
+  timeout now covers the whole response, Android uses native connection and read timeouts, and a new **Stop
+  generating** button ends a request immediately. Nothing from a stopped or timed-out request is saved, cards you
+  already had are kept, and generating again never creates duplicates.
+- New **Report a Bug** and **Request a Feature** forms in Settings → Feedback. You see exactly what will be sent
+  before pressing Submit. Only your text and the app version, operating system, architecture and time are sent.
+  Keys, sign-ins, file paths and email addresses you type are removed automatically. Notes, flashcards and
+  attachments are never sent. A report counts as sent only after it's confirmed, and an unsent draft is kept.
+- An occasional tip mentions the feedback forms: at most once every 14 days, never while you're writing, studying or
+  generating cards, and "Don't show this again" turns it off for good.
+- Windows-only release. Android stays 0.6.1/code13 and the affected Mac 0.5.0 downloads are unchanged (Mac repair
+  is planned for 0.7.0). Windows installer is not Authenticode-signed; updates keep the existing Ed25519 identity.
+
 ## 0.6.5 — 2026-11-08
 
 - Windows desktop redesign: cohesive light/dark themes, clearer navigation and note library, a borderless writing

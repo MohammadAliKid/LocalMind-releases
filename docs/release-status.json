@@ -1,8 +1,8 @@
 {
   "windows": {
-    "version": "0.6.5",
+    "version": "0.6.6",
     "authenticodeSigned": false,
-    "installerSha256": "ec4d1e3d22f5408cf0d81ea6815ab5923427308257a570d6be9dec9613046a0e"
+    "installerSha256": "61365d8ba10dacd8284b9e9608f881f4fee6a6e8e3ed9ad9e84804f5fc3c9c0e"
   },
   "android": {
     "version": "0.6.1",
@@ -15,5 +15,9 @@
     "affected": true,
     "unchanged": true,
     "warning": "Defer installation. Signing repair and genuine Apple Silicon verification reserved for 0.7.0."
+  },
+  "feedback": {
+    "formsAvailable": true,
+    "automaticSubmission": false
   }
 }

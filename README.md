@@ -12,7 +12,7 @@
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/version-0.6.5-245a73" alt="Version 0.6.5">
+  <img src="https://img.shields.io/badge/version-0.6.6-245a73" alt="Version 0.6.6">
   <img src="https://img.shields.io/badge/Windows-10%20%7C%2011%20(64--bit)-245a73" alt="Windows 10 and 11, 64-bit">
   <img src="https://img.shields.io/badge/macOS-Apple%20Silicon%20%7C%20Intel-245a73" alt="macOS: Apple Silicon and Intel">
   <img src="https://img.shields.io/badge/Android-7%2B-245a73" alt="Android 7 or later">
@@ -24,6 +24,16 @@
 </p>
 
 ## What it does
+
+**Windows 0.6.6: Awaiting approval, Stop generating, feedback forms.** A new **Awaiting approval** view gathers
+every suggested flashcard from all your notes: search, filter and sort, approve or reject one card or many, undo, and
+jump to the source note. Flashcard generation can no longer hang (a timeout now covers the whole answer) and has a
+**Stop generating** button. Cards already in Anki no longer show as awaiting approval: LocalMind checks Anki by each
+card's permanent ID without changing anything there. **Report a Bug** and **Request a Feature** forms (Settings →
+Feedback) show exactly what would be sent; **automatic submission is not switched on yet**, so nothing is sent and
+you can copy your report instead. Android remains 0.6.1/code13; Mac downloads remain affected 0.5.0.
+
+<table><tr><td width="50%"><img src="images/approvals-desktop.png" alt="Awaiting approval view with synthetic flashcards"><br><sub>Awaiting approval.</sub></td><td width="50%"><img src="images/feedback-desktop.png" alt="Report a Bug preview in dark mode with synthetic text"><br><sub>Report a Bug: exact preview (submission not yet enabled).</sub></td></tr></table>
 
 **Windows 0.6.5: a calmer desktop workspace.** Refined light/dark themes, clearer navigation and note cards,
 a borderless writing page, consistent icons, compact formatting with overflow, grouped note tools, refreshed
@@ -127,13 +137,13 @@ image-inclusive backups and clearer local-save/folder-sync status.
 
 | Platform | Version | Download |
 |---|---|---|
-| Windows 10/11 (64-bit) | 0.6.5 | [Download LocalMind for Windows](https://github.com/MohammadAliKid/LocalMind-releases/releases/download/v0.6.5/LocalMind-Setup.exe) |
+| Windows 10/11 (64-bit) | 0.6.6 | [Download LocalMind for Windows](https://github.com/MohammadAliKid/LocalMind-releases/releases/download/v0.6.6/LocalMind-Setup.exe) |
 | Mac — Apple Silicon | 0.5.0 | [Download LocalMind for Mac — Apple Silicon](https://github.com/MohammadAliKid/LocalMind-releases/releases/download/v0.5.1/LocalMind-0.5.0-mac-arm64.dmg) |
 | Mac — Intel | 0.5.0 | [Download LocalMind for Mac — Intel](https://github.com/MohammadAliKid/LocalMind-releases/releases/download/v0.5.1/LocalMind-0.5.0-mac-x64.dmg) |
 | Android 7+ | 0.6.1 | [Download LocalMind for Android](https://github.com/MohammadAliKid/LocalMind-releases/releases/download/v0.6.1/LocalMind-Android-0.6.1.apk) |
 
-[Release notes and SHA-256 checksums](https://github.com/MohammadAliKid/LocalMind-releases/releases/tag/v0.6.5)
-· Windows 0.6.5; Android 0.6.1/code13 unchanged; Mac 0.5.0 downloads remain affected (defer installation).
+[Release notes and SHA-256 checksums](https://github.com/MohammadAliKid/LocalMind-releases/releases/tag/v0.6.6)
+· Windows 0.6.6; Android 0.6.1/code13 unchanged; Mac 0.5.0 downloads remain affected (defer installation).
 
 **Windows:** run LocalMind-Setup.exe. It installs for your account, with no administrator rights. The installer is
 not Authenticode-signed yet, so SmartScreen may ask for confirmation. Compare its SHA-256 with the release page.
@@ -163,7 +173,7 @@ Android signing certificate SHA-256: `91c92f7cd107dfc977661f0497b2954bfcb5d789f5
 
 | File | SHA-256 |
 |---|---|
-| LocalMind-Setup.exe | `ec4d1e3d22f5408cf0d81ea6815ab5923427308257a570d6be9dec9613046a0e` |
+| LocalMind-Setup.exe | `61365d8ba10dacd8284b9e9608f881f4fee6a6e8e3ed9ad9e84804f5fc3c9c0e` |
 | LocalMind-0.5.0-mac-arm64.dmg | `27e671603cbfbbadaaf6456d491dc6d23c3899ee64cdac5c16bb82de2f7c247a` |
 | LocalMind-0.5.0-mac-x64.dmg | `d213ba27e67c957c85753e74e3a6597f9de759beea9af73d87b2973d51fcb097` |
 | LocalMind-Android-0.6.1.apk | `650728e6742aa43d4cff98bd9aaea3d826b16a6a086298b869eb60ee7e331e46` |
@@ -245,6 +255,8 @@ On a Mac, use ⌘ for Ctrl and ⌥ for Alt.
   write; text still being edited has a crash draft, and force-killing Android before storage commits can lose it.
   Folder updated confirms local folder writes, not receipt on another device. No reliable always-on background sync.
   Requires Android System WebView 111 or newer. The current library view is bounded to 500 notes; search finds older notes.
+- **Feedback forms:** Report a Bug / Request a Feature are in Settings, but automatic submission is not switched on
+  yet; the app says so and sends nothing. It will be enabled later without an app update.
 - **Unsigned Windows installer:** expect a SmartScreen warning until it's code-signed.
 - **Real-device testing:** sync was tested between independent installations on one PC and between an Android
   emulator and a desktop instance through real Syncthing; not yet between physical PCs and phones. AI providers
@@ -262,6 +274,9 @@ On a Mac, use ⌘ for Ctrl and ⌥ for Alt.
 - [x] 0.5.2: Android editor redesign, offline Study Mode, image-inclusive backups and durable sync recovery
 - [x] 0.6.0: Study Mode, Merge Notes, Sources, bulk flashcards, Android gestures, Settings window, first-run guide
 - [x] 0.6.1: encrypted Google Drive sync for Windows and Android
+- [x] 0.6.5: Windows desktop redesign
+- [x] 0.6.6: Awaiting approval, Stop generating, Anki approval fix, feedback forms (Windows)
+- [ ] 0.7.0: corrected macOS release (Apple Silicon and Intel)
 - [ ] Signing (Windows and Apple Developer ID), Google Play, tests on physical devices, sync
   journal compaction, Markdown export
 
