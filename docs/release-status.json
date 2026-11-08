@@ -18,6 +18,8 @@
   },
   "feedback": {
     "formsAvailable": true,
-    "automaticSubmission": false
+    "automaticSubmission": true,
+    "enabledAt": "2026-11-08",
+    "note": "Live: Cloudflare Worker relay + GitHub App (Issues only, private LocalMind-feedback); verified with test issues #1-#3 incl. the published 0.6.6 app, and the owner received the notification email."
   }
 }

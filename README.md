@@ -30,10 +30,11 @@ every suggested flashcard from all your notes: search, filter and sort, approve 
 jump to the source note. Flashcard generation can no longer hang (a timeout now covers the whole answer) and has a
 **Stop generating** button. Cards already in Anki no longer show as awaiting approval: LocalMind checks Anki by each
 card's permanent ID without changing anything there. **Report a Bug** and **Request a Feature** forms (Settings →
-Feedback) show exactly what would be sent; **automatic submission is not switched on yet**, so nothing is sent and
-you can copy your report instead. Android remains 0.6.1/code13; Mac downloads remain affected 0.5.0.
+Feedback) show exactly what will be sent before you press Submit, then deliver it to the developer's private
+issue tracker. Only your text and the app version, OS, architecture and time are sent; notes, flashcards and
+attachments never are. Android remains 0.6.1/code13; Mac downloads remain affected 0.5.0.
 
-<table><tr><td width="50%"><img src="images/approvals-desktop.png" alt="Awaiting approval view with synthetic flashcards"><br><sub>Awaiting approval.</sub></td><td width="50%"><img src="images/feedback-desktop.png" alt="Report a Bug preview in dark mode with synthetic text"><br><sub>Report a Bug: exact preview (submission not yet enabled).</sub></td></tr></table>
+<table><tr><td width="50%"><img src="images/approvals-desktop.png" alt="Awaiting approval view with synthetic flashcards"><br><sub>Awaiting approval.</sub></td><td width="50%"><img src="images/feedback-desktop.png" alt="Report a Bug preview in dark mode with synthetic text"><br><sub>Report a Bug: exact preview before sending.</sub></td></tr></table>
 
 **Windows 0.6.5: a calmer desktop workspace.** Refined light/dark themes, clearer navigation and note cards,
 a borderless writing page, consistent icons, compact formatting with overflow, grouped note tools, refreshed
@@ -255,8 +256,8 @@ On a Mac, use ⌘ for Ctrl and ⌥ for Alt.
   write; text still being edited has a crash draft, and force-killing Android before storage commits can lose it.
   Folder updated confirms local folder writes, not receipt on another device. No reliable always-on background sync.
   Requires Android System WebView 111 or newer. The current library view is bounded to 500 notes; search finds older notes.
-- **Feedback forms:** Report a Bug / Request a Feature are in Settings, but automatic submission is not switched on
-  yet; the app says so and sends nothing. It will be enabled later without an app update.
+- **Feedback delivery:** reports go to a private GitHub tracker through LocalMind's relay; at most 3 reports per
+  minute per connection. Without internet the report isn't sent (the app says so and keeps your draft).
 - **Unsigned Windows installer:** expect a SmartScreen warning until it's code-signed.
 - **Real-device testing:** sync was tested between independent installations on one PC and between an Android
   emulator and a desktop instance through real Syncthing; not yet between physical PCs and phones. AI providers
