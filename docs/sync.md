@@ -8,6 +8,10 @@ the changes to its own database.
 You need: LocalMind 0.3.0 or later on both PCs, and Syncthing on both PCs. Syncthing is free and open source.
 LocalMind does not install or configure Syncthing for you.
 
+Using Google Drive instead, or syncing with Android? See the [sync help and pairing-code guide](https://mohammadalikid.github.io/LocalMind-releases/help/drive-sync.html).
+On Android 0.6.8 and later, **Stop syncing** and **Turn off sync** always respond, even if the shared folder stops
+responding; they control LocalMind only, not the Syncthing app.
+
 ## PC 1 (the PC that already has your notes)
 
 1. **Install Syncthing.** Download it from <https://syncthing.net/downloads/> (the Windows setup), or install
