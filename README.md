@@ -9,35 +9,40 @@
 
 
 
-**Branding preview:** Open volume is the owner-selected identity. v0.6.7 has not been published; the download links below
-still point to the actual released versions. No new Mac build is included.
+**Open volume** is LocalMind’s official brain-and-book identity. Windows and Android branding is included in the versions below.
 
 ![LocalMind Windows workspace with synthetic notes](images/main-light.png)
 
 ## Downloads and platform status
 
-| Platform | Published download | Branding candidate |
+| Platform | Actual version | Official download |
 |---|---|---|
-| Windows 10/11 x64 | [0.6.6 installer](https://github.com/MohammadAliKid/LocalMind-releases/releases/download/v0.6.6/LocalMind-Setup.exe) | 0.6.7 prepared; not public |
-| Android 7+ | [0.6.1 / code13 APK](https://github.com/MohammadAliKid/LocalMind-releases/releases/download/v0.6.1/LocalMind-Android-0.6.1.apk) | 0.6.7 / code14 prepared; not public |
-| macOS | Affected 0.5.0 only; **defer installation** | Icon source only; repair reserved for 0.7.0 |
+| Windows 10/11 x64 | 0.6.7 | [Windows installer](https://github.com/MohammadAliKid/LocalMind-releases/releases/download/v0.6.7/LocalMind-Setup.exe) |
+| Android 7+ | 0.6.7 / code14 | [Android APK](https://github.com/MohammadAliKid/LocalMind-releases/releases/download/v0.6.7/LocalMind-Android-0.6.7.apk) |
+| Mac — Apple Silicon | 0.5.0 — affected | [Retained DMG](https://github.com/MohammadAliKid/LocalMind-releases/releases/download/v0.5.1/LocalMind-0.5.0-mac-arm64.dmg) |
+| Mac — Intel | 0.5.0 — affected | [Retained DMG](https://github.com/MohammadAliKid/LocalMind-releases/releases/download/v0.5.1/LocalMind-0.5.0-mac-x64.dmg) |
 
-Windows installers are **not Authenticode-signed**. Update feeds retain the existing Ed25519 identity.
-Android retains its permanent signing certificate and package ID; install updates over the existing app to preserve data.
-For APK installation, allow installs from the app/browser only when Android asks. AnkiDroid is installed separately.
+[Release notes](https://github.com/MohammadAliKid/LocalMind-releases/releases/tag/v0.6.7). Windows 0.6.7;
+Android 0.6.7/code14; Mac 0.5.0 remains affected. **Defer Mac installation**:
+Apple Silicon's resource seal is invalid; Intel is unsigned. No new Mac build is included; repair is reserved for 0.7.0.
 
-Existing Mac downloads are unchanged: [Apple Silicon](https://github.com/MohammadAliKid/LocalMind-releases/releases/download/v0.5.1/LocalMind-0.5.0-mac-arm64.dmg)
-has an invalid resource seal; [Intel](https://github.com/MohammadAliKid/LocalMind-releases/releases/download/v0.5.1/LocalMind-0.5.0-mac-x64.dmg)
-is unsigned. Neither is called production-ready. Do not work around Gatekeeper based on this branding preview.
+Windows installers are **not Authenticode-signed**. In-app updates retain the existing Ed25519 identity.
+Android updates retain the package ID and permanent certificate; install over the existing app to preserve data.
+Requires Android System WebView 111+. AnkiDroid is optional and installed separately.
 
-Current published SHA-256 values (candidate hashes are recorded separately):
+Android signing certificate SHA-256: `91c92f7cd107dfc977661f0497b2954bfcb5d789f52dcb7f12e022bfcb61bd75`.
 
-| Published file | SHA-256 |
+<details><summary>SHA-256 download checksums</summary>
+
+| File | SHA-256 |
 |---|---|
-| LocalMind-Setup.exe (0.6.6) | `61365d8ba10dacd8284b9e9608f881f4fee6a6e8e3ed9ad9e84804f5fc3c9c0e` |
-| LocalMind-Android-0.6.1.apk | `650728e6742aa43d4cff98bd9aaea3d826b16a6a086298b869eb60ee7e331e46` |
+| LocalMind-Setup.exe | `11bcd5be7a6290ba235191d2795befe2b62a1fd32608daa5906cbd9fe8263091` |
+| LocalMind-Android-0.6.7.apk | `9d53310ea7f8db3609aedd5d58539a3a1ab44ef854b6d18f22ef4bfe005fade8` |
 | LocalMind-0.5.0-mac-arm64.dmg | `27e671603cbfbbadaaf6456d491dc6d23c3899ee64cdac5c16bb82de2f7c247a` |
 | LocalMind-0.5.0-mac-x64.dmg | `d213ba27e67c957c85753e74e3a6597f9de759beea9af73d87b2973d51fcb097` |
+
+</details>
+
 ## A local library for what you learn
 
 - **Write and find.** Markdown, images, checklists, autosave, history, favorites, collections, tags and local full-text search.

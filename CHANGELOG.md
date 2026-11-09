@@ -1,6 +1,6 @@
 # Changelog
 
-## 0.6.7 — 2026-11-08 (candidate; not published)
+## 0.6.7 — 2026-11-09
 
 - New official **Open volume** brain-and-book identity, selected by the owner: consistent app icons, headers,
   Settings branding, favicons and social artwork in LocalMind's slate/teal palette.
