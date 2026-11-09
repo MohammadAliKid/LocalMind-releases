@@ -1,25 +1,20 @@
 {
+  "version": "0.6.7",
+  "published": true,
   "windows": {
-    "version": "0.6.6",
+    "version": "0.6.7",
     "authenticodeSigned": false,
-    "installerSha256": "61365d8ba10dacd8284b9e9608f881f4fee6a6e8e3ed9ad9e84804f5fc3c9c0e"
+    "sha256": "11bcd5be7a6290ba235191d2795befe2b62a1fd32608daa5906cbd9fe8263091"
   },
   "android": {
-    "version": "0.6.1",
-    "versionCode": 13,
-    "unchanged": true,
-    "sha256": "650728e6742aa43d4cff98bd9aaea3d826b16a6a086298b869eb60ee7e331e46"
+    "version": "0.6.7",
+    "versionCode": 14,
+    "sha256": "9d53310ea7f8db3609aedd5d58539a3a1ab44ef854b6d18f22ef4bfe005fade8",
+    "certificateSha256": "91c92f7cd107dfc977661f0497b2954bfcb5d789f52dcb7f12e022bfcb61bd75"
   },
   "macos": {
     "version": "0.5.0",
-    "affected": true,
-    "unchanged": true,
-    "warning": "Defer installation. Signing repair and genuine Apple Silicon verification reserved for 0.7.0."
+    "status": "affected; defer installation; retained unchanged; repair reserved for 0.7.0"
   },
-  "feedback": {
-    "formsAvailable": true,
-    "automaticSubmission": true,
-    "enabledAt": "2026-11-08",
-    "note": "Live: Cloudflare Worker relay + GitHub App (Issues only, private LocalMind-feedback); verified with test issues #1-#3 incl. the published 0.6.6 app, and the owner received the notification email."
-  }
+  "releaseUrl": "https://github.com/MohammadAliKid/LocalMind-releases/releases/tag/v0.6.7"
 }
