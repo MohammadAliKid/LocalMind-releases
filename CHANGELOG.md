@@ -1,5 +1,30 @@
 # Changelog
 
+## 0.6.8 — 2026-11-09
+
+- Fixed (Android): folder sync (Syncthing) could hang indefinitely and then refuse to stop, pause or turn off, and
+  turning it on again could hang too. Every sync-folder operation now runs on LocalMind's own thread instead of the
+  shared plugin thread (so a stuck folder can no longer hold up saving notes or settings), has a time limit, and is
+  cancelled where Android allows it. A new **Stop syncing** button and **Turn off sync** always respond, even while
+  the folder hangs; a stopped round never writes, reports or turns sync back on later, and restarting never runs
+  two rounds at once. Progress, time-outs and lost folder access are explained clearly. Nothing is reset to recover:
+  notes, waiting changes, sync journals and the phone's sync identity are kept.
+- New **Can't find your pairing code?** assistant under the Google Drive pairing-code field (Windows and Android):
+  get it from another connected device, from a saved copy, or, if it's lost everywhere, start a new library after
+  deleting LocalMind's hidden data through Google Drive's own Manage apps page. It explains plainly that Google
+  sign-in can't recover the code and never deletes Drive data itself.
+- Google Drive accounts: the signed-in account is shown; **Use another Google account** (Google's account chooser)
+  and **Sign out** work before pairing; Disconnect, Sign out, Revoke and deleting the library are separate actions.
+  A device now remembers the pairing codes of libraries it used (in Windows DPAPI / Android Keystore only), so it can
+  **Reconnect** to the original account later without typing the code. Joining a different library than the one
+  a device synced before asks first, and LocalMind refuses to sync a library into another account's Drive.
+- Setup asks you to confirm that you saved the new pairing code; connected devices from earlier versions get a
+  gentle reminder. The code is hidden from screenshots and screen sharing while shown, and removed from bug reports.
+- New sync help and troubleshooting page on the website, linked from Settings → Sync.
+- Unchanged: Drive encryption format, workspace IDs and pairing codes (0.6.7 codes keep working), notes,
+  attachments, flashcard/Anki identities, Windows updater identity and the Android package and certificate.
+  Mac keeps its affected 0.5.0 downloads; macOS repair remains 0.7.0 / draft PR #7.
+
 ## 0.6.7 — 2026-11-09
 
 - New official **Open volume** brain-and-book identity, selected by the owner: consistent app icons, headers,
