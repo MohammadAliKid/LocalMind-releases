@@ -1,5 +1,23 @@
 # Changelog
 
+## 0.6.9 — 2026-11-10
+
+- Fixed: joining a Google Drive library with its pairing code could sit on "Checking the code and downloading your
+  library…" for a long time with no progress (on Windows and Android), and closing Settings asked for the code again.
+  The code is now checked in seconds by downloading one small file; the library then downloads in the background with
+  "Downloading your library… N of M files", Cancel, and Resume after a failure or an app restart (nothing already
+  downloaded is fetched again). A wrong code or account is refused right away. Several devices can join with the
+  same code at the same time.
+- Faster, leaner Google Drive sync, especially on Android: nothing is downloaded again after the app restarts (it was
+  re-downloading its sync history and every image), a sync with no changes is a single small request, uploads are
+  confirmed by Google Drive's checksum instead of being downloaded again, a new device downloads the library about
+  once (was up to three times), and reconnecting a device that still has its pairing code fetches only what changed.
+- Android: Drive requests have connection and read time limits; Settings stays responsive during a long download;
+  Set up, Join and Disconnect no longer wait for the whole first upload.
+- Unchanged: the shared sync and encryption format, pairing codes, library and device identities, notes, images,
+  flashcards, Syncthing folder sync, the Windows updater identity and the Android package and certificate. Mac keeps
+  its affected 0.5.0 downloads; macOS repair remains 0.7.0.
+
 ## 0.6.8 — 2026-11-09
 
 - Fixed (Android): folder sync (Syncthing) could hang indefinitely and then refuse to stop, pause or turn off, and
