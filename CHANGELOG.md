@@ -1,5 +1,19 @@
 # Changelog
 
+## 0.6.11 — 2026-11-10
+
+- Fixed: notes created or edited on a device could stop reaching other devices after that device had been in another
+  library and then rejoined this one (for example after the library was set up again in Google Drive). The rejoining
+  device starts its change log again from 1, and devices that had already received its earlier changes skipped the
+  new ones without any error. Most often seen as Android → Windows sync stopping while Windows → Android kept working.
+  Devices now recognise a restarted change log and read it again from the start; changes they already have are
+  skipped, so nothing is duplicated. Windows also replaces its local copy of another device's change file when Google
+  Drive holds a different one at the same name.
+- Changes already waiting in Google Drive arrive by themselves once the receiving device runs 0.6.11: no reset, no new
+  pairing code and no re-joining. Notes, cards, images, conflicts, keys and device identities are kept.
+- Unchanged: the sync and encryption format, pairing codes and identities. 0.6.10 devices keep syncing with 0.6.11
+  devices; to receive changes from a device that rejoined a library, a device needs 0.6.11.
+
 ## 0.6.10 — 2026-11-10
 
 - Faster Google Drive sync on Windows and Android: files are now downloaded a few at a time instead of one by one
