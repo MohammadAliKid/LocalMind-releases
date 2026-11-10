@@ -17,13 +17,13 @@
 
 | Platform | Actual version | Official download |
 |---|---|---|
-| Windows 10/11 x64 | 0.6.9 | [Windows installer](https://github.com/MohammadAliKid/LocalMind-releases/releases/download/v0.6.9/LocalMind-Setup.exe) |
-| Android 7+ | 0.6.9 / code16 | [Android APK](https://github.com/MohammadAliKid/LocalMind-releases/releases/download/v0.6.9/LocalMind-Android-0.6.9.apk) |
+| Windows 10/11 x64 | 0.6.10 | [Windows installer](https://github.com/MohammadAliKid/LocalMind-releases/releases/download/v0.6.10/LocalMind-Setup.exe) |
+| Android 7+ | 0.6.10 / code17 | [Android APK](https://github.com/MohammadAliKid/LocalMind-releases/releases/download/v0.6.10/LocalMind-Android-0.6.10.apk) |
 | Mac — Apple Silicon | 0.5.0 — affected | [Retained DMG](https://github.com/MohammadAliKid/LocalMind-releases/releases/download/v0.5.1/LocalMind-0.5.0-mac-arm64.dmg) |
 | Mac — Intel | 0.5.0 — affected | [Retained DMG](https://github.com/MohammadAliKid/LocalMind-releases/releases/download/v0.5.1/LocalMind-0.5.0-mac-x64.dmg) |
 
-[Release notes](https://github.com/MohammadAliKid/LocalMind-releases/releases/tag/v0.6.9). Windows 0.6.9;
-Android 0.6.9/code16; Mac 0.5.0 remains affected. **Defer Mac installation**:
+[Release notes](https://github.com/MohammadAliKid/LocalMind-releases/releases/tag/v0.6.10). Windows 0.6.10;
+Android 0.6.10/code17; Mac 0.5.0 remains affected. **Defer Mac installation**:
 Apple Silicon's resource seal is invalid; Intel is unsigned. No new Mac build is included; repair is reserved for 0.7.0.
 
 Windows installers are **not Authenticode-signed**. In-app updates retain the existing Ed25519 identity.
@@ -36,8 +36,8 @@ Android signing certificate SHA-256: `91c92f7cd107dfc977661f0497b2954bfcb5d789f5
 
 | File | SHA-256 |
 |---|---|
-| LocalMind-Setup.exe | `9f7356451ade52d576cb757624bcfced2db51d194107016592526428e0442f20` |
-| LocalMind-Android-0.6.9.apk | `f188754454c7be73b622c80e98546747ab5dac1c9f02e8add7a8f6ed48203b55` |
+| LocalMind-Setup.exe | `8949109768ee2e173d6891124a43b8e1b409b135ece310ba3b1abfc56243bdb0` |
+| LocalMind-Android-0.6.10.apk | `a2bcfbee8450485fcc0ab4ac66681f7c128e51a5e3a8b8993a5fecaafffabffc` |
 | LocalMind-0.5.0-mac-arm64.dmg | `27e671603cbfbbadaaf6456d491dc6d23c3899ee64cdac5c16bb82de2f7c247a` |
 | LocalMind-0.5.0-mac-x64.dmg | `d213ba27e67c957c85753e74e3a6597f9de759beea9af73d87b2973d51fcb097` |
 
@@ -54,7 +54,12 @@ Android signing certificate SHA-256: `91c92f7cd107dfc977661f0497b2954bfcb5d789f5
   Each device keeps its own database; conflicting edits are kept. Image-inclusive backups support recovery.
 - **Choose your AI.** Bring your own provider or work without AI. No LocalMind subscription is required;
   optional providers may charge or require subscriptions.
-- **New in 0.6.9.** Joining a Google Drive library with its pairing code shows progress, can be cancelled and
+- **New in 0.6.10.** Google Drive sync downloads several files at once (up to 4 on Windows, 3 on Android), so
+  joining a library on a new device is 3–4 times faster and catching up after time away 2–3 times faster on real
+  Google Drive. Uploads stay one at a time, because Google Drive processes them one by one anyway. Every transfer
+  keeps its own time limit; Disconnect stops a sync at once, and when Google Drive asks LocalMind to slow down every
+  transfer backs off together. The sync format is unchanged: 0.6.9 and 0.6.10 devices sync with each other.
+- **0.6.9.** Joining a Google Drive library with its pairing code shows progress, can be cancelled and
   resumes after a restart instead of appearing stuck. Drive sync is incremental end to end: a sync with no changes
   is one small request, Android no longer downloads its sync history and images again after the app restarts, and
   reconnecting a device fetches only what changed.
