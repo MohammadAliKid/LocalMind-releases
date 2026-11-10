@@ -1,5 +1,21 @@
 # Changelog
 
+## 0.6.10 — 2026-11-10
+
+- Faster Google Drive sync on Windows and Android: files are now downloaded a few at a time instead of one by one
+  (up to 4 at once on Windows, 3 on Android, with memory limits on the phone). Joining a library on a new device and
+  catching up after being away are about 2–4 times faster on real Google Drive. Uploads stay one at a time: Google
+  Drive processes them one by one anyway (measured), so sending several at once would only make each one wait
+  longer. A sync with no changes is still a single small request.
+- Every transfer keeps its own time limit, and Disconnect or quitting now stops a round's transfers at once (anything
+  not yet uploaded stays queued and is sent next time, with the same file ids, so nothing is duplicated).
+- When Google Drive asks LocalMind to slow down, every transfer on that device backs off together, using Google's
+  suggested wait (bounded); an expired Google sign-in token is renewed once, not once per transfer.
+- Unchanged: the shared sync and encryption format, pairing codes, library and device identities, conflict handling,
+  notes, images, flashcards, Syncthing folder sync, the Windows updater identity and the Android package and
+  certificate. 0.6.9 and 0.6.10 devices sync with each other. Mac keeps its affected 0.5.0 downloads; macOS repair
+  remains 0.7.0.
+
 ## 0.6.9 — 2026-11-10
 
 - Fixed: joining a Google Drive library with its pairing code could sit on "Checking the code and downloading your
