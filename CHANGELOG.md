@@ -1,5 +1,19 @@
 # Changelog
 
+## 0.6.12 — 2026-11-12 (Windows)
+
+- Fixed (Windows): after another device rejoined a library, a Windows PC that was re-connected to the same library
+  could still miss that device's new notes and edits. The PC kept its old copies of that device's earlier change
+  files, and those made the 0.6.11 detection believe nothing had restarted. Windows now moves those old copies aside
+  once it has proof that the other device's change log restarted, then reads the new log from the start. Changes it
+  already has are skipped, so nothing is duplicated.
+- The old copies are kept for 30 days in the PC's private sync folder (never uploaded) and are never used again. A
+  Google Drive listing that is briefly incomplete never causes this: LocalMind needs proof from the files' contents.
+- Changes already waiting in Google Drive arrive once the PC runs 0.6.12: no reset, no new pairing code and no
+  re-joining. Notes, cards, images, conflicts, keys and device identities are kept.
+- Android stays at 0.6.11 (it already handled this case) and needs no update. Unchanged: the sync and encryption
+  format, pairing codes and identities. 0.6.11 and 0.6.12 devices sync with each other.
+
 ## 0.6.11 — 2026-11-10
 
 - Fixed: notes created or edited on a device could stop reaching other devices after that device had been in another
