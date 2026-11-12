@@ -1,5 +1,40 @@
 # Changelog
 
+## 0.6.15 — 2026-11-13
+
+- Fixed: **duplicate Anki cards across devices.** When a card had already been sent to Anki from one device (for
+  example your phone), another device whose Anki hadn't synced with AnkiWeb yet could add it a second time. LocalMind
+  now knows when a card was already sent from another device:
+  - It waits ("Waiting for Anki sync") instead of adding a copy.
+  - It adds the card here only if you say this Anki is a separate collection, or press **Add to this Anki**.
+  - An edit made on another device now updates the same Anki note, without asking which version to keep.
+  - A card whose exact text is already in Anki under a different card is held ("Same text already in Anki") until you
+    press **Add anyway**.
+  - Before sending, LocalMind first syncs with your other devices for up to 20 seconds, so a card one of them has
+    just sent is known. Offline, it still works and says it couldn't check.
+  - Duplicates made earlier are still listed as conflicts. LocalMind never deletes, merges or resets Anki cards.
+- New: **decks for collections** (Settings → Anki, and on Android under AnkiDroid). New cards from a LocalMind
+  collection can go to their own Anki deck, for example Cardiology → Medicine::Cardiology.
+  - Everything else goes to your default deck.
+  - If a note is in several mapped collections, the mapping higher in the list is used, and the preview shows where
+    each card will go.
+  - Decks are created only when you press "Create in Anki".
+  - Cards already in Anki stay where they are.
+- New: **edit cards in Awaiting Approval.** Press Edit on any card to change the question, answer, Cloze text, Extra or
+  Image Occlusion masks in place, with the same editor as each note's Flashcards window.
+  - Editing doesn't approve the card or ask the AI anything.
+  - Your search, filter, scroll position and selection stay as they were.
+  - If a save fails, your text stays in the field.
+- New (Windows): **optional crash reports.** If LocalMind stopped unexpectedly, the next start shows a small notice.
+  - **Review report** shows exactly what would be sent: version, Windows version, times, the kind of failure, and a
+    few technical lines. It never includes your notes, cards, prompts, keys, sign-ins, pairing codes or file paths.
+  - Nothing is sent until you press Send.
+  - **Not now** asks again next time; **Dismiss** never asks again for that event.
+  - A normal close, an update restart or logging off never counts as a crash.
+- Unchanged: notes, sync and encryption formats in every breaking sense, pairing codes, identities and keys. New
+  information (the record that a card was sent to Anki) is optional and ignored by older versions, which keep syncing
+  with 0.6.15.
+
 ## 0.6.14 — 2026-11-12
 
 - New: **reading themes.** Besides System, Light and Dark you can choose Midnight, OLED Black, Warm Paper or Forest
