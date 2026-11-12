@@ -1,5 +1,17 @@
 # Changelog
 
+## 0.6.14 — 2026-11-12
+
+- New: **reading themes.** Besides System, Light and Dark you can choose Midnight, OLED Black, Warm Paper or Forest
+  (Settings → General → Theme on Windows, Settings → Theme on Android). On Android the accent colour (blue, plum, forest) works with
+  every theme. The choice is kept on each device; your other devices keep their own.
+- New: **clearer progress.** Downloading your library from Google Drive, syncing and downloading an update now show one
+  consistent progress bar with "N of M files" where the count is known. Screen readers hear when the download starts,
+  roughly every quarter of the way, when it is paused and when the library is being added — not every single file.
+- Unchanged: notes, sync and encryption formats, pairing codes, identities and keys. Everything from 0.6.13 (Sync
+  health, synced title suggestions, All Notes keeping your place) is included. Older LocalMind versions open the same
+  settings without problems.
+
 ## 0.6.13 — 2026-11-12
 
 - New: **Sync health** (Settings → Sync on Windows, Sync on Android). It tells apart changes saved on this device,
