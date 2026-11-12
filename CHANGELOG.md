@@ -1,5 +1,25 @@
 # Changelog
 
+## 0.6.13 — 2026-11-12
+
+- New: **Sync health** (Settings → Sync on Windows, Sync on Android). It tells apart changes saved on this device,
+  waiting to upload, uploaded, and confirmed by your other devices. A device is shown as having your changes only after
+  it confirms it applied them; LocalMind never assumes it. It also shows devices that are offline or haven't caught
+  up, changes waiting either way, sign-in or connection problems, and recent automatic repairs. Devices still on an
+  older LocalMind are shown as "can't confirm" until they are updated.
+- New: a weekly check of this device's own database (and a few minutes after each update). It only reads; if it ever
+  finds a problem it tells you what to do and changes nothing.
+- Google Drive: once a day LocalMind double-checks Google's full file list, so a file Google's change list missed
+  still arrives without disconnecting and reconnecting. It only adds what was missed; it never removes anything.
+- Organize title suggestions now stay the same everywhere: they are kept across restarts and synced, so your other
+  devices show the same suggestion without asking the AI again. Accepting one doesn't start another AI request. A
+  suggestion is hidden once the note changes, your own titles are never replaced, and if two devices suggested
+  different titles while offline they settle on one.
+- Fixed (Windows): accepting a suggested title in All Notes no longer jumps the list to the top; your place in the
+  list is kept when notes are re-ordered.
+- Unchanged: the sync and encryption format (new information is optional and ignored by older versions), pairing
+  codes, identities and keys. 0.6.11 and 0.6.12 devices keep syncing with 0.6.13.
+
 ## 0.6.12 — 2026-11-12 (Windows)
 
 - Fixed (Windows): after another device rejoined a library, a Windows PC that was re-connected to the same library

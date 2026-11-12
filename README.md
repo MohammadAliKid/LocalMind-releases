@@ -17,13 +17,13 @@
 
 | Platform | Actual version | Official download |
 |---|---|---|
-| Windows 10/11 x64 | 0.6.12 | [Windows installer](https://github.com/MohammadAliKid/LocalMind-releases/releases/download/v0.6.12/LocalMind-Setup.exe) |
-| Android 7+ | 0.6.11 / code18 | [Android APK](https://github.com/MohammadAliKid/LocalMind-releases/releases/download/v0.6.11/LocalMind-Android-0.6.11.apk) |
+| Windows 10/11 x64 | 0.6.13 | [Windows installer](https://github.com/MohammadAliKid/LocalMind-releases/releases/download/v0.6.13/LocalMind-Setup.exe) |
+| Android 7+ | 0.6.13 / code19 | [Android APK](https://github.com/MohammadAliKid/LocalMind-releases/releases/download/v0.6.13/LocalMind-Android-0.6.13.apk) |
 | Mac — Apple Silicon | 0.5.0 — affected | [Retained DMG](https://github.com/MohammadAliKid/LocalMind-releases/releases/download/v0.5.1/LocalMind-0.5.0-mac-arm64.dmg) |
 | Mac — Intel | 0.5.0 — affected | [Retained DMG](https://github.com/MohammadAliKid/LocalMind-releases/releases/download/v0.5.1/LocalMind-0.5.0-mac-x64.dmg) |
 
-[Release notes](https://github.com/MohammadAliKid/LocalMind-releases/releases/tag/v0.6.12). Windows 0.6.12;
-Android 0.6.11/code18 (unchanged; also attached to the 0.6.12 release); Mac 0.5.0 remains affected. **Defer Mac installation**:
+[Release notes](https://github.com/MohammadAliKid/LocalMind-releases/releases/tag/v0.6.13). Windows 0.6.13;
+Android 0.6.13/code19; Mac 0.5.0 remains affected. **Defer Mac installation**:
 Apple Silicon's resource seal is invalid; Intel is unsigned. No new Mac build is included; repair is reserved for 0.7.0.
 
 Windows installers are **not Authenticode-signed**. In-app updates retain the existing Ed25519 identity.
@@ -36,8 +36,8 @@ Android signing certificate SHA-256: `91c92f7cd107dfc977661f0497b2954bfcb5d789f5
 
 | File | SHA-256 |
 |---|---|
-| LocalMind-Setup.exe | `6b094549829a2d6e0e2e41d4333dbe147dbb23962f8dbd9885c951cb858744e3` |
-| LocalMind-Android-0.6.11.apk | `d3252d1992158f999003610f2cc9d9c6adc1de2dd7b171736d49ccab240b7d9a` |
+| LocalMind-Setup.exe | `78465a609d55c9da8dc8347b4a1e5e434be87de66ae22fd883aed5c5b4a53033` |
+| LocalMind-Android-0.6.13.apk | `d2ea05ab45079b774a35dcd6a62998a397aff86171c136d90eced9bba52e3986` |
 | LocalMind-0.5.0-mac-arm64.dmg | `27e671603cbfbbadaaf6456d491dc6d23c3899ee64cdac5c16bb82de2f7c247a` |
 | LocalMind-0.5.0-mac-x64.dmg | `d213ba27e67c957c85753e74e3a6597f9de759beea9af73d87b2973d51fcb097` |
 
@@ -54,7 +54,8 @@ Android signing certificate SHA-256: `91c92f7cd107dfc977661f0497b2954bfcb5d789f5
   Each device keeps its own database; conflicting edits are kept. Image-inclusive backups support recovery.
 - **Choose your AI.** Bring your own provider or work without AI. No LocalMind subscription is required;
   optional providers may charge or require subscriptions.
-- **New in 0.6.12 (Windows).** Fixes a remaining case of the 0.6.11 sync problem: a Windows PC re-connected to
+- **New in 0.6.13.** **Sync health** shows what is saved here, uploaded, and confirmed by each of your other devices (a device counts only after it confirms it applied your changes), plus offline devices, problems and automatic repairs. A weekly read-only check of this device's database, a daily Google Drive double-check for files the change list missed, Organize title suggestions that stay the same on every device and across restarts, and All Notes keeps your place when you accept a suggested title.
+- **0.6.12 (Windows).** Fixes a remaining case of the 0.6.11 sync problem: a Windows PC re-connected to
   the same library could keep old copies of another device's change files and still miss that device's new notes and
   edits. Windows now sets those old copies aside (kept 30 days, never uploaded) once the files themselves prove the
   other device's change log restarted; a briefly incomplete Google Drive listing never triggers it. No reset, new
