@@ -1,6 +1,6 @@
 # Changelog
 
-## 0.6.15 — 2026-11-13
+## 0.6.15 — 2026-11-12
 
 - Fixed: **duplicate Anki cards across devices.** When a card had already been sent to Anki from one device (for
   example your phone), another device whose Anki hadn't synced with AnkiWeb yet could add it a second time. LocalMind
