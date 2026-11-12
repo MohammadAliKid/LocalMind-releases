@@ -17,13 +17,13 @@
 
 | Platform | Actual version | Official download |
 |---|---|---|
-| Windows 10/11 x64 | 0.6.14 | [Windows installer](https://github.com/MohammadAliKid/LocalMind-releases/releases/download/v0.6.14/LocalMind-Setup.exe) |
-| Android 7+ | 0.6.14 / code20 | [Android APK](https://github.com/MohammadAliKid/LocalMind-releases/releases/download/v0.6.14/LocalMind-Android-0.6.14.apk) |
+| Windows 10/11 x64 | 0.6.15 | [Windows installer](https://github.com/MohammadAliKid/LocalMind-releases/releases/download/v0.6.15/LocalMind-Setup.exe) |
+| Android 7+ | 0.6.15 / code21 | [Android APK](https://github.com/MohammadAliKid/LocalMind-releases/releases/download/v0.6.15/LocalMind-Android-0.6.15.apk) |
 | Mac — Apple Silicon | 0.5.0 — affected | [Retained DMG](https://github.com/MohammadAliKid/LocalMind-releases/releases/download/v0.5.1/LocalMind-0.5.0-mac-arm64.dmg) |
 | Mac — Intel | 0.5.0 — affected | [Retained DMG](https://github.com/MohammadAliKid/LocalMind-releases/releases/download/v0.5.1/LocalMind-0.5.0-mac-x64.dmg) |
 
-[Release notes](https://github.com/MohammadAliKid/LocalMind-releases/releases/tag/v0.6.14). Windows 0.6.14;
-Android 0.6.14/code20; Mac 0.5.0 remains affected. **Defer Mac installation**:
+[Release notes](https://github.com/MohammadAliKid/LocalMind-releases/releases/tag/v0.6.15). Windows 0.6.15;
+Android 0.6.15/code21; Mac 0.5.0 remains affected. **Defer Mac installation**:
 Apple Silicon's resource seal is invalid; Intel is unsigned. No new Mac build is included; repair is reserved for 0.7.0.
 
 Windows installers are **not Authenticode-signed**. In-app updates retain the existing Ed25519 identity.
@@ -36,8 +36,8 @@ Android signing certificate SHA-256: `91c92f7cd107dfc977661f0497b2954bfcb5d789f5
 
 | File | SHA-256 |
 |---|---|
-| LocalMind-Setup.exe | `e606f6d593879d3a214fb9377bea1ce3004b91ffbed129448157a011b98e70c5` |
-| LocalMind-Android-0.6.14.apk | `8a178fd857298de6f43e11272482400fe001af8224e2c40dc73f7570d40a9c2a` |
+| LocalMind-Setup.exe | `58c931de66bc2ab6b5e6d8bb32fc08d39d96cf6c3d1a9048b673cb21a60e2000` |
+| LocalMind-Android-0.6.15.apk | `bb0cd3029f5b418932cd002b5fe28921615305b3414f05d7f99607a0155ddb14` |
 | LocalMind-0.5.0-mac-arm64.dmg | `27e671603cbfbbadaaf6456d491dc6d23c3899ee64cdac5c16bb82de2f7c247a` |
 | LocalMind-0.5.0-mac-x64.dmg | `d213ba27e67c957c85753e74e3a6597f9de759beea9af73d87b2973d51fcb097` |
 
@@ -54,7 +54,8 @@ Android signing certificate SHA-256: `91c92f7cd107dfc977661f0497b2954bfcb5d789f5
   Each device keeps its own database; conflicting edits are kept. Image-inclusive backups support recovery.
 - **Choose your AI.** Bring your own provider or work without AI. No LocalMind subscription is required;
   optional providers may charge or require subscriptions.
-- **New in 0.6.14.** Reading themes — Midnight, OLED Black, Warm Paper and Forest besides System, Light and Dark (on Android with any accent colour) — and one clear progress bar for library downloads, syncing and updates, announced to screen readers at sensible steps.
+- **New in 0.6.15.** No more duplicate Anki cards when several devices send cards: a card already sent from another device waits until your Anki has it (or is added only to a separate Anki collection), and edits from any device update the same Anki note. Collections can send new cards to their own Anki decks, cards can be edited directly in Awaiting Approval (desktop), and Windows can offer an optional, previewed crash report after an unexpected close.
+- **0.6.14.** Reading themes — Midnight, OLED Black, Warm Paper and Forest besides System, Light and Dark (on Android with any accent colour) — and one clear progress bar for library downloads, syncing and updates, announced to screen readers at sensible steps.
 - **0.6.13.** **Sync health** shows what is saved here, uploaded, and confirmed by each of your other devices (a device counts only after it confirms it applied your changes), plus offline devices, problems and automatic repairs. A weekly read-only check of this device's database, a daily Google Drive double-check for files the change list missed, Organize title suggestions that stay the same on every device and across restarts, and All Notes keeps your place when you accept a suggested title.
 - **0.6.12 (Windows).** Fixes a remaining case of the 0.6.11 sync problem: a Windows PC re-connected to
   the same library could keep old copies of another device's change files and still miss that device's new notes and
