@@ -1,20 +1,20 @@
 {
-  "version": "0.6.15",
+  "version": "0.6.16",
   "published": true,
   "windows": {
-    "version": "0.6.15",
+    "version": "0.6.16",
     "authenticodeSigned": false,
-    "sha256": "58c931de66bc2ab6b5e6d8bb32fc08d39d96cf6c3d1a9048b673cb21a60e2000"
+    "sha256": "d7bf9445f7e43dde4a031a878d7de815de3d0f895e563cb7b3cbd27dc3372670"
   },
   "android": {
-    "version": "0.6.15",
-    "versionCode": 21,
-    "sha256": "bb0cd3029f5b418932cd002b5fe28921615305b3414f05d7f99607a0155ddb14",
+    "version": "0.6.16",
+    "versionCode": 22,
+    "sha256": "06ae6534e06c598096153628544233aa6654ab5481b4da6dd986602aecb59fa3",
     "certificateSha256": "91c92f7cd107dfc977661f0497b2954bfcb5d789f52dcb7f12e022bfcb61bd75"
   },
   "macos": {
     "version": "0.5.0",
     "status": "affected; defer installation; retained unchanged; repair reserved for 0.7.0"
   },
-  "releaseUrl": "https://github.com/MohammadAliKid/LocalMind-releases/releases/tag/v0.6.15"
+  "releaseUrl": "https://github.com/MohammadAliKid/LocalMind-releases/releases/tag/v0.6.16"
 }

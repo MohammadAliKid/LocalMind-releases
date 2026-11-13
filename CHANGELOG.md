@@ -1,5 +1,33 @@
 # Changelog
 
+## 0.6.16 — 2026-11-13
+
+- New: **long notes are analysed in full.** Organize and card suggestions used to read only the first 12,000
+  characters of a note and silently skip the rest. Long notes are now sent in sections, split at headings and
+  paragraphs (never inside a code block, a table or a cloze).
+  - Before anything that needs more than one AI request, LocalMind asks once. It shows how many requests, the
+    provider and model, the approximate input size and how the provider charges. **Cancel** sends nothing.
+  - Up to 8 sections per note. If a note is longer, LocalMind says that only the first 8 sections were analysed,
+    instead of leaving the rest out silently.
+  - After you edit one part of an organized long note, Organize sends only the sections that changed.
+  - Card suggestions run per section, so the end of a long lecture gets cards too. "Cards per request" applies to
+    each section, and every section is told about the cards already written, so they aren't repeated.
+  - Automatic organization never sends a long note by itself. It says the note is long and waits for you.
+  - In bulk actions (several selected notes), long notes wait and are confirmed together with one answer.
+- New: **several question styles at once.** Choose any mix of Direct questions, Why / how and Clinical scenarios
+  (Settings → Flashcards, each note's generation preferences, and on Android under Settings → AI → Card suggestions).
+  At least one stays selected. Clinical scenarios are built only from findings stated in the note.
+- Improved: **tags.** The existing tags offered to the AI are now the ones most relevant to the note, not just the
+  most used. A suggested tag that is only a variant of one you have ("beta-blockers" for "Beta blocker", a plural, a
+  Greek letter written out) is added as your existing tag instead of a near-duplicate.
+- Fixed: **"What's new" notes.** The update notes for 0.6.14 and 0.6.15 only said "LocalMind 0.6.x". Updates now show
+  the full notes while available, downloading and ready to install, and Settings shows what changed in the version you
+  have installed.
+- Safer card suggestions: a waiting card you edited yourself is never rewritten or removed by "Generate again".
+  Approved cards and card identities are unchanged, as before.
+- Unchanged: notes, sync and encryption formats, pairing codes, identities and keys. Nothing new is synced. Devices on
+  0.6.15 keep syncing with 0.6.16; a note set to several question styles uses the defaults on a 0.6.15 device.
+
 ## 0.6.15 — 2026-11-12
 
 - Fixed: **duplicate Anki cards across devices.** When a card had already been sent to Anki from one device (for
