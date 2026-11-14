@@ -1,5 +1,45 @@
 # Changelog
 
+## 0.6.17 — 2026-11-14
+
+- Fixed: **a card edit could lose to Anki bookkeeping from another device.** If you edited a card on one device while
+  another device was sending it to Anki, the "sent to Anki" record could replace your edit (it was kept only as a
+  conflict to review). Now the edit and the record are combined on every device, and the edit reaches the same Anki
+  note. Real conflicts (two edits, a rejection, a deletion) are still shown for you to choose.
+- Fixed: **an AI title suggestion could disappear** when another device changed the same note at the same time (for
+  example starring it). Both are now kept.
+- New: **medical tag aliases** (Settings → Tags).
+  - LocalMind lists tags that may mean the same thing: plurals and hyphens ("Arrhythmias" / "Arrhythmia"), British and
+    American spelling ("Haemorrhage" / "Hemorrhage"), likely typos, and abbreviations used on the same notes ("CKD" /
+    "Chronic kidney disease").
+  - Nothing changes until you confirm. You choose which name to keep, and the dialog shows how many notes move. No
+    note loses a tag, and every merge can be undone.
+  - Abbreviations with several medical meanings ("MS", "MI", "RA", "PE" and others) are marked and need an extra
+    confirmation. Opposites ("Hypertension" / "Hypotension"), numbered variants ("Type 1" / "Type 2") and names that
+    differ in a short word ("Hepatitis A" / "Hepatitis B") are never proposed.
+  - **Keep separate** is remembered.
+  - **Aliases:** add names that mean a tag in your library (for example "STEMI" for "Myocardial infarction"). Typed
+    tags and AI suggestions then land on that tag. The AI never merges tags and never guesses an abbreviation.
+  - **Undo keeps your own decisions:** if you added the kept tag to a note yourself after the merge, on any device and
+    even at the same time as the undo, undo leaves it there and tells you how many notes kept both tags.
+  - **The same tag created on two devices** is combined automatically when nothing would be lost. Otherwise Settings →
+    Tags shows it: **Add them** brings the other device's aliases (refused while they don't fit), **Leave them out**
+    keeps yours. Nothing is dropped silently.
+  - Merges and aliases sync to your other devices. Update every device: an older device still shows a merged tag as
+    an ordinary tag, and LocalMind lists a note tagged with it there so you can finish the merge.
+- Backups: a backup that contains tag aliases, merges or such duplicates uses backup format 6. LocalMind 0.6.16 can't
+  restore it (it says the backup is newer and changes nothing). Every other backup keeps format 5, which 0.6.16
+  restores.
+- Unchanged: notes, sync and encryption formats in every breaking sense, pairing codes, identities and keys. Tag
+  aliases add two optional fields (on tags and on note tags, database version 13) that older versions ignore while
+  syncing.
+- Known limitations:
+  - A 0.6.16 device can't pass on adding a tag a note already has, so a later undo on another device may remove it.
+  - With a 0.6.16 device in the library, two devices can show different versions of a card that was edited while it
+    was sent to Anki, until you choose one. Both versions stay available.
+  - The order of Anki send records follows each device's clock.
+  - A Google Drive change that the change list never reports is found only by the daily full check.
+
 ## 0.6.16 — 2026-11-13
 
 - New: **long notes are analysed in full.** Organize and card suggestions used to read only the first 12,000
